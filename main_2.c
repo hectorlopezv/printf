@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
-
+#include <limits.h>
 int main(void)
 {
 	int len;
@@ -23,6 +23,14 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	printf("Largo %d\n",len);
 	printf("Largo %d\n",len2);
+
+	_printf("%%A\n");
+	len = printf("Expected: %c%%%c%%%%%s%c%s%s\n", INT_MAX, INT_MIN, "hello", 0, "holberton", 0);
+	len2 = _printf("Actual  : %c%%%c%%%%%s%c%s%s\n", INT_MAX, INT_MIN, "hello", 0, "holberton", 0);
+
+	printf("Largo %d\n",len);
+	printf("Largo %d\n",len2);
+
 
 	return (0);
 
