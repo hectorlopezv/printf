@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int i = 0, j = 0, j_temp = 0, j_temp_2 = 0, ocurrencias = 0;
 
 	va_start(arg, format);
-	if (!format)
+	if (format == NULL)
 		return (-1);
 	buffer = create_buffer(1024);
 	if (!buffer)
