@@ -7,12 +7,14 @@
  */
 char *convert(long int num, int base)
 {
-	static char *array = "0123456789abcdef";
+	static char *array;
 	static char buffer[50];
 	char sign = 0;
 	char *ptr;
-	unsigned long n = num;
+	unsigned long n;
 
+	array = "0123456789abcdef";
+	n = num;
 	if (num < 0)
 	{
 		n = -num;
