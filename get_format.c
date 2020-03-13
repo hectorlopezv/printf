@@ -15,10 +15,11 @@ int (*get_format(char format))(char *, va_list,int)
 		{'i', print_int},
 		{'c', print_char},
 		{'s', print_str},
+		{'%', print_percentage_literal},
 		{'\0', NULL}
 	};
 
-	while (i < 4)
+	while (i < 5)
 	{
 		if (format == formato[i].c)
 			return (formato[i].f);

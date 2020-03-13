@@ -59,6 +59,7 @@ int _printf(const char *format, ...)
 	printf("valor de I %d\n",i);
 	printf("valor J_temp %d \n",j_temp);
 	printf("valor ocurrencias %d\n",ocurrencias);
+	printf("suma de todo %d\n",(i - ocurrencias) + j_temp_2);
 	write(1,buffer,(i - ocurrencias) + (j_temp_2));
 	va_end(arg);
 	free(buffer);
