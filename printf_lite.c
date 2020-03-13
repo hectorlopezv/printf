@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	while (format[i])
 	{
 		if (j == 1024)
-		{	write(1, buffer, (i - ocurrencias) + (j_temp_2));
+		{	write(1, buffer,1024);
 			j = 0;
 			free(buffer);
 			buffer = create_buffer(1024);

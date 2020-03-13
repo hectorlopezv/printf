@@ -96,3 +96,17 @@ char *create_buffer(int size)
 
 }
 
+int print_to_binary(char *buffer, va_list list, int index_buffer)
+{
+	int i;
+	char *p;
+
+	p =  convert(va_arg(list, int), 2);
+	for (i = 0; p[i] != '\0'; ++i, index_buffer++)
+		buffer[index_buffer]  = p[i];
+
+	return (i - 1);
+
+
+}
+
