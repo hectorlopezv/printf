@@ -18,8 +18,18 @@ int print_percentage_literal(char *buffer, va_list list,int index_buffer)
  */
 int print_int(char *buffer, va_list list,int index_buffer)
 {
+	int i;
+	char * p ;
 
-	return(0);
+	p =  convert(va_arg(list,int),10);
+
+	for (i = 0; p[i] != '\0'; ++i,index_buffer++)
+	{
+		buffer[index_buffer]  = p[i];
+	}
+
+	return (i - 1);
+
 }
 
 /**
