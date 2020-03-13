@@ -11,7 +11,7 @@ char *convert(long int num, int base)
 	static char buffer[50];
 	char sign = 0;
 	char *ptr;
-	long int n;
+	long int  n;
 
 	array = "0123456789abcdef";
 	n = num;
