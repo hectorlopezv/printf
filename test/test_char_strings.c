@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	int alen, elen;
+	int alen, elen,pelen;
 	char c = 'z';
 	char *str = NULL;
 	printf("START OF TEST\n");
@@ -12,6 +12,9 @@ int main(void)
 	printf("_printf(NULL) : %d\n", _printf(str));
 	printf("printf(\"%\") : %d\n", printf("%"));
 	printf("_printf(\"%\"): %d\n", _printf("%"));
+	printf("printf(\"%\") : %d\n", printf("222%55"));
+	pelen = printf("222%55\n");
+	printf("%d\n",pelen);
 	str = "hello, world";
 	printf("=====================\n");
 	printf("*****CHAR*****\n");
