@@ -1,4 +1,6 @@
 #include "holberton.h"
+#include <unistd.h>
+
 
 /**
  *
@@ -11,7 +13,9 @@ int _printf(const char *format, ...)
 	va_list arg;
 	char *buffer;
 	int i = 0, j = 0;
-	void (*get)(char *, va_list,int);
+	int j_temp = 0;
+	int ocurrencias = 0;
+	int (*get)(char *, va_list,int);
 
 	va_start(arg, format);
 	buffer = malloc(1024);
@@ -36,17 +40,22 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			get = get_format(format[i]);
-			get(buffer, arg, j);
-			free(buffer);
-			buffer = malloc(1024);
-			if (buffer == NULL)
-				return (0);
+
+			if( get != NULL)
+			{
+				j_temp  += get(buffer,arg,j);
+				j += j_temp;
+				ocurrencias++;
+			}
 		}
 		i++;
 		j++;
 
 	}
+
+	write(1,buffer,i - ocurrencias + j_temp);
 	va_end(arg);
-	return (i);
+	free(buffer);
+	return (i - ocurrencias);
 }
 

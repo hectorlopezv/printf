@@ -4,7 +4,7 @@
  *
  *
  */
-void (*get_format(char format))(char *, va_list,int)
+int (*get_format(char format))(char *, va_list,int)
 {
 	int i;
 
