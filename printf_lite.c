@@ -32,6 +32,12 @@ int _printf(const char *format, ...)
 		else
 		{	i++;
 			get = get_format(format[i]);
+			if (get == NULL)
+			{
+				free(buffer);
+
+				return (-1);
+			}
 			if (get != NULL)
 			{	j_temp  += get(buffer, arg, j);
 				j += j_temp;
