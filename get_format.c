@@ -4,7 +4,7 @@
  *
  *
  */
-void (*get_format(char *format))(char *, va_list)
+void (*get_format(char format))(char *, va_list,int)
 {
 	int i;
 
@@ -20,7 +20,7 @@ void (*get_format(char *format))(char *, va_list)
 
 	while (i < 4)
 	{
-		if (*format == formato[i].c)
+		if (format == formato[i].c)
 			return (formato[i].f);
 
 		i++;
