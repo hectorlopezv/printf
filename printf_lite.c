@@ -11,12 +11,12 @@ int _printf(const char *format, ...)
 	va_list arg;
 	char *buffer;
 	int i = 0, j = 0;
-	void (*get)(char *, va_list);
+	void (*get)(char *, va_list,int);
 
 	va_start(arg, format);
 	buffer = malloc(1024);
 	if (buffer == NULL)
-		return (NULL);
+		return (0);
 
 	while (format[i])
 	{
@@ -26,9 +26,9 @@ int _printf(const char *format, ...)
 			free(buffer);
 			buffer = malloc(1024);
 			if (buffer == NULL)
-				return (NULL);
+				return (0);
 		}
-		if (format[i] != %)
+		if (format[i] != '%')
 		{
 			buffer[j] = format[i];
 		}
@@ -40,12 +40,13 @@ int _printf(const char *format, ...)
 			free(buffer);
 			buffer = malloc(1024);
 			if (buffer == NULL)
-				return (NULL);
+				return (0);
 		}
 		i++;
 		j++;
 
 	}
 	va_end(arg);
+	return (i);
 }
 
