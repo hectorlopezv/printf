@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	char *buffer;
 	int i = 0, j = 0;
 	int j_temp = 0;
+	int j_temp_2 = 0;
 	int ocurrencias = 0;
 	int (*get)(char *, va_list,int);
 
@@ -46,16 +47,21 @@ int _printf(const char *format, ...)
 				j_temp  += get(buffer,arg,j);
 				j += j_temp;
 				ocurrencias++;
+				j_temp_2 += j_temp;
+				j_temp = 0;
 			}
 		}
 		i++;
 		j++;
 
 	}
-
-	write(1,buffer,i - ocurrencias + j_temp);
+	printf("valor de J %d\n",j);
+	printf("valor de I %d\n",i);
+	printf("valor J_temp %d \n",j_temp);
+	printf("valor ocurrencias %d\n",ocurrencias);
+	write(1,buffer,(i - ocurrencias) + (j_temp_2));
 	va_end(arg);
 	free(buffer);
-	return (i - ocurrencias);
+	return ((i - ocurrencias) + j_temp_2);
 }
 

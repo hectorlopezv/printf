@@ -24,7 +24,7 @@ int print_str(char *buffer, va_list list,int index_buffer)
 	{
 		buffer[index_buffer]  = p[i];
 	}
-	return (i);
+	return (i - 1);
 }
 
 /**
