@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <unistd.h>
-
+#include <string.h>
 
 /**
  *
@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	buffer = malloc(1024);
 	if (buffer == NULL)
 		return (0);
-
+	printf("tamano %lu\n",strlen(format));
 	while (format[i])
 	{
 		if (j == 1024)
@@ -44,6 +44,7 @@ int _printf(const char *format, ...)
 
 			if( get != NULL)
 			{
+				printf("entro\n");
 				j_temp  += get(buffer,arg,j);
 				j += j_temp;
 				ocurrencias++;
@@ -54,6 +55,8 @@ int _printf(const char *format, ...)
 		i++;
 		j++;
 
+		printf("I %d\n",i);
+		printf("J %d\n",j);
 	}
 	printf("valor de J %d\n",j);
 	printf("valor de I %d\n",i);
