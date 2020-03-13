@@ -1,28 +1,30 @@
-void (*get_op(char *format))(char *, va_list)
+#include "holberton.h"
+
+
+void (*get_format(char format))(char *, va_list)
 {
 	int i;
 
 	i = 0;
-	switc_h possible_case[] =
 
+	struct formats formato[] =
 	{
-		{"c", print_c},
-		{"i", print_i},
-		{"f", print_f},
-		{"s", print_s},
-		{NULL, NULL}
-
+		{'d', print_int},
+		{'i', print_int},
+		{'c', print_char},
+		{'s', print_str},
+		{'\0', NULL}
 	};
 
 	while (i < 4)
 	{
-		if (strcmp(format, possible_case[i].format) == 0)
+		if (format == formato[i].c)
 		{
-			return (possible_case[i].f);
+			return (formato[i].f);
 
 		}
 		i++;
 	}
-	return (possible_case[i].f);
+	return (formato[i].f);
 }
 
