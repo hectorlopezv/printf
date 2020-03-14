@@ -7,7 +7,7 @@
  * Return: return format, return null if error
  */
 
-int (*get_format(char format))(char *, va_list, int  )
+int (*get_format(char format))(char *, va_list, int)
 {
 	int i;
 
@@ -17,7 +17,7 @@ int (*get_format(char format))(char *, va_list, int  )
 		{'c', print_char},
 		{'s', print_str},
 		{'%', print_percentage_literal},
-		{'b',print_to_binary},
+		{'b', print_to_binary},
 		{'\0', NULL}
 	};
 
