@@ -21,8 +21,9 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			if (j == 1024)
-			{	write(1, buffer, (i - ocurrencias) + (j_temp_2));
-				j = 0, j_temp_2 = 0, ocurrencias = 0;
+			{	write(1, buffer,1023);
+				j = 0, j_temp_2 = 0;
+				buffer[j] = format[i];
 			}
 			else
 			{
