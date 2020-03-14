@@ -25,9 +25,8 @@ int _printf(const char *format, ...)
 		{	i++, get = get_format(format[i]);
 			if (get == NULL)
 			{
-				if ((i == 1 && format[i] == 0) || format[largo_format] != 10)
-				{	write(1, buffer, (i - ocurrencias) + (j_temp_2));
-					free(buffer), va_end(arg);
+				if ((i == 1 && format[i] == 0))
+				{	free(buffer), va_end(arg);
 					return (-1);
 				}
 				else
