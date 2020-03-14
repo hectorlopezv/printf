@@ -26,6 +26,8 @@ int _printf(const char *format, ...);
 char *convert(long int num, int base);
 char *create_buffer(int size);
 int print_to_binary(char *buffer, va_list list, int a);
+int print_pointer(char *buffer, va_list list, int a);
+
 
 #endif
 
