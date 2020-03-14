@@ -84,16 +84,6 @@ int rev_string(char *buffer, va_list list, int index_buffer)
 	char temp;
 
 	string_rev = va_arg(list, char *);
-	if (string_rev == NULL)
-	{
-		string_rev = "(null)";
-		for (i = 0; string_rev[i] != '\0'; i++)
-		{
-			buffer[index_buffer] = string_rev[i];
-			index_buffer++;
-		}
-		return (i - 1);
-	}
 	length = _strlen(string_rev);
 	b = 0;
 	c = length;
