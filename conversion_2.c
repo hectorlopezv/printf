@@ -70,29 +70,47 @@ int print_rot13(char *buffer, va_list list, int index_buffer)
 
 /**
  * rev_string - check the code for Holberton School students.
- *@str: string character
+ *@buffer: string character
+ *@list: list
+ *@index_buffer: index
  * Return: Always 0.
  */
 
-void rev_string(char *str)
+int rev_string(char *buffer, va_list list, int index_buffer)
 {
-	int b, c;
-	int length = _strlen(str);
-
+	int b, c, i;
+	int length;
+	char *string_rev;
 	char temp;
 
+	string_rev = va_arg(list, char *);
+	if (string_rev == NULL)
+	{
+		string_rev = "(null)";
+		for (i = 0; string_rev[i] != '\0'; i++)
+		{
+			buffer[index_buffer] = string_rev[i];
+			index_buffer++;
+		}
+		return (i - 1);
+	}
+	length = _strlen(string_rev);
 	b = 0;
 	c = length;
-
-	/*swappp*/
 	while (c >= b)
 	{
-		temp = str[b];
-		str[b] = str[c];
-		str[c] = temp;
+		temp = string_rev[b];
+		string_rev[b] = string_rev[c];
+		string_rev[c] = temp;
 		c--;
 		b++;
 	}
+	for (i = 0; string_rev[i] != '\0'; i++)
+	{
+		buffer[index_buffer] = string_rev[i];
+		index_buffer++;
+	}
+	return (i - 1);
 }
 
 /**
