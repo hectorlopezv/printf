@@ -104,10 +104,9 @@ int rev_string(char *buffer, va_list list, int index_buffer)
 		c--;
 		b++;
 	}
-	for (i = 0; string_rev[i] != '\0'; i++)
+	for (i = 0; string_rev[i] != '\0'; i++, index_buffer++)
 	{
 		buffer[index_buffer] = string_rev[i];
-		index_buffer++;
 	}
 	return (i - 1);
 }
