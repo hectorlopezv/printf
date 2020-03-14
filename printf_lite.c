@@ -10,13 +10,12 @@ int _printf(const char *format, ...)
 {	va_list arg;
 	char *buffer;
 	int (*get)(char *, va_list, int);
-	int i = 0, j = 0, j_temp = 0, j_temp_2 = 0, ocurrencias = 0, largo_format;
+	int i = 0, j = 0, j_temp = 0, j_temp_2 = 0, ocurrencias = 0;
 
 	va_start(arg, format);
 	buffer = create_buffer(7000);
 	if (format == NULL || buffer == NULL)
 		return (-1);
-	largo_format = (_strlen(format) == 0) ? 0 : (_strlen(format));
 	while (format[i] && format)
 	{
 		if (format[i] != '%')
