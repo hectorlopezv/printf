@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		{
 			if (j == 1024)
 			{	write(1, buffer, (i - ocurrencias) + (j_temp_2));
-				j = 0, j_temp_2 = 0, ocurrencias = 0, buffer[j] = '\0';
+				j = 0, j_temp_2 = 0, ocurrencias = 0;
 			}
 			else
 			{
