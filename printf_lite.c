@@ -20,6 +20,10 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (format[i] && format)
 	{
+		if (format[i] == '%' && format[i + 1] == '\0')
+			return (-1);
+		if (format[i] == '%' && format[i + 1] == ' ' && !format[i + 2])
+			return (-1);
 		if (j == 1024)
 		{	write(1, buffer,1024);
 			j = 0;
