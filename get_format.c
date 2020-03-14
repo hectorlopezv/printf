@@ -18,7 +18,7 @@ int (*get_format(char format))(char *, va_list, int)
 		{'s', print_str},
 		{'%', print_percentage_literal},
 		{'b', print_to_binary},
-		{'r', print_rot13},
+		{'R', print_rot13},
 		{'\0', NULL}
 	};
 
