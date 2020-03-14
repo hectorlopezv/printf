@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {	va_list arg;
 	char *buffer;
 	int (*get)(char *, va_list, int);
-	int i = 0, j = 0, j_temp = 0, j_temp_2 = 0, ocurrencias = 0;
+	int i = 0, j = 0, j_temp = 0, j_temp_2 = 0, ocurrencias = 0, largo_format = _strlen(format);
 
 	va_start(arg, format);
 	if (format == NULL)
@@ -26,8 +26,8 @@ int _printf(const char *format, ...)
 		{	i++, get = get_format(format[i]);
 			if (get == NULL)
 			{
-				if (i == 1 && format[i] == 0)
-				{	free(buffer), va_end(arg);
+				if (i == 1 && format[i] == 0 )
+				{	free(buffer), va_end(arg);;
 					return (-1);
 				}
 				else

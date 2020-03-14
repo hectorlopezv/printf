@@ -119,7 +119,7 @@ int rev_string(char *buffer, va_list list, int index_buffer)
  * Return: Always 0.
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int counter = 0;
 
