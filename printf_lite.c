@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	buffer = create_buffer(7000);
 	if (format == NULL || buffer == NULL)
 		return (-1);
-	largo_format =  _strlen(format);
+	largo_format = (_strlen(format) == 0) ? 0 : (_strlen(format));
 	while (format[i] && format)
 	{
 		if (format[i] != '%')
