@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	int (*get)(char *, va_list, int);
 	int i = 0, j = 0, j_temp = 0, j_temp_2 = 0, ocurrencias = 0, largo_format;
 
-	va_start(arg, format), buffer = create_buffer(7000);
+	va_start(arg, format), buffer = create_buffer(1024);
 	if (format == NULL || buffer == NULL)
 		return (-1);
 	largo_format = _strlen(format);
