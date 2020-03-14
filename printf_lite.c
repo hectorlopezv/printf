@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	char *buffer;
 	int (*get)(char *, va_list, int);
 	int i = 0, j = 0, j_temp = 0, j_temp_2 = 0, ocurrencias = 0;
-
+	int j_tt = 0;
 	va_start(arg, format);
 	if (format == NULL)
 		return (-1);
@@ -20,19 +20,13 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (format[i] && format)
 	{
-		if (format[i] == '%' && format[i + 1] == '\0')
-			return (-1);
-		if (format[i] == '%' && format[i + 1] == ' ' && !format[i + 2])
-			return (-1);
-		if (j == 1024)
-		{	write(1, buffer,1024);
-			j = 0;
-			free(buffer);
-			buffer = create_buffer(1024);
-			if (buffer == NULL)
-				return (-1); }
+
+
 		if (format[i] != '%')
+		{
 			buffer[j] = format[i];
+
+		}
 		else
 		{	i++;
 			get = get_format(format[i]);
@@ -52,7 +46,8 @@ int _printf(const char *format, ...)
 				}
 			}
 			if (get != NULL)
-			{	j_temp  += get(buffer, arg, j);
+			{
+				j_temp  += get(buffer, arg, j);
 				j += j_temp;
 				ocurrencias++;
 				j_temp_2 += j_temp;
@@ -62,9 +57,10 @@ int _printf(const char *format, ...)
 		i++;
 		j++;
 	}
+
 	write(1, buffer, (i - ocurrencias) + (j_temp_2));
 	va_end(arg), free(buffer);
-	return ((i - ocurrencias) + j_temp_2);
+	return ((i - ocurrencias) + j_temp_2 + j_tt);
 }
 
 /*	printf(" I %d \n",i);*/
