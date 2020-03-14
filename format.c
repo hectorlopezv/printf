@@ -61,7 +61,6 @@ int print_str(char *buffer, va_list list, int  index_buffer)
 	{
 		if (index_buffer == 1024)
 		{
-			buffer[index_buffer]  = p[i];
 			j += i;
 			write(1, buffer, 1024), j = 0, i = 0;
 			/*buffer[j] = '\0';*/
