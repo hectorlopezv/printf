@@ -42,7 +42,7 @@ int print_int(char *buffer, va_list list, int  index_buffer)
  */
 int print_str(char *buffer, va_list list, int  index_buffer)
 {
-	int i;
+	int i, j;
 	char *null_case;
 	char *p = (char *) va_arg(list, char *);
 
@@ -58,9 +58,20 @@ int print_str(char *buffer, va_list list, int  index_buffer)
 	}
 
 	for (i = 0; p[i] != '\0'; ++i, index_buffer++)
+	{
+		if (index_buffer == 1024)
+		{
+			buffer[index_buffer]  = p[i];
+			j += i;
+			write(1, buffer, 1024), j = 0, i = 0;
+			/*buffer[j] = '\0';*/
+			continue;
+		}
+
 		buffer[index_buffer]  = p[i];
 
-	return (i - 1);
+	}
+	return ((j + i) - 1);
 }
 
 /**
