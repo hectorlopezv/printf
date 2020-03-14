@@ -100,7 +100,7 @@ int rev_string(char *buffer, va_list list, int index_buffer)
 		buffer[index_buffer] = string_rev[i];
 		index_buffer++;
 	}
-	return (i - 1);
+	return (i);
 }
 
 /**
