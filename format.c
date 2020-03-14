@@ -42,7 +42,7 @@ int print_int(char *buffer, va_list list, int  index_buffer)
  */
 int print_str(char *buffer, va_list list, int  index_buffer)
 {
-	int i, j;
+	int i;
 	char *null_case;
 	char *p = (char *) va_arg(list, char *);
 
