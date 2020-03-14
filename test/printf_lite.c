@@ -1,77 +1,50 @@
 #include "holberton.h"
-#include <unistd.h>
-#include <string.h>
 
 /**
- *
- *
- *
+ * _printf - function that works like printf
+ * @format: arguments to check
+ * Return: 0 on success
  */
 
 int _printf(const char *format, ...)
-{
-	va_list arg;
+{	va_list arg;
 	char *buffer;
-	int i = 0, j = 0;
-	int j_temp = 0;
-	int j_temp_2 = 0;
-	int ocurrencias = 0;
-	int (*get)(char *, va_list,int);
+	int (*get)(char *, va_list, int);
+	int i = 0, j = 0, j_temp = 0, j_temp_2 = 0, ocurrencias = 0, largo_format;
 
-	va_start(arg, format);
-	if (!format)
+	va_start(arg, format), buffer = create_buffer(7000);
+	if (format == NULL || buffer == NULL)
 		return (-1);
-
-	buffer = malloc(1024);
-	if (buffer == NULL)
-		return (0);
-
-	/*	printf("tamano %lu\n",strlen(format));*/
-	while (format[i])
+	largo_format = _strlen(format);
+	while (format[i] && format)
 	{
-		if (j == 1024)
-		{
-			j = 0;
-			free(buffer);
-			buffer = malloc(1024);
-			if (buffer == NULL)
-				return (0);
-		}
 		if (format[i] != '%')
-		{
 			buffer[j] = format[i];
-		}
 		else
 		{
-			i++;
-			get = get_format(format[i]);
-
-			if( get != NULL)
+			if (j == 1024)
+			{	write(1, buffer, (i - ocurrencias) + (j_temp_2));
+				j = 0, j_temp_2 = 0, ocurrencias = 0, buffer[j] = '\0'; }
+			i++, get = get_format(format[i]);
+			if (get == NULL)
 			{
-				/*	printf("entro\n");*/
-				j_temp  += get(buffer,arg,j);
-				j += j_temp;
-				ocurrencias++;
-				j_temp_2 += j_temp;
-				j_temp = 0;
-			}
-		}
-		i++;
-		j++;
-
-		/*	printf("I %d\n",i);
-			printf("J %d\n",j);
-		 */
-	}
-	/*	printf("valor de J %d\n",j);
-		printf("valor de I %d\n",i);
-		printf("valor J_temp %d \n",j_temp);
-		printf("valor ocurrencias %d\n",ocurrencias);
-		printf("suma de todo %d\n",(i - ocurrencias) + j_temp_2);
-	 */
-	write(1,buffer,(i - ocurrencias) + (j_temp_2));
-	va_end(arg);
-	free(buffer);
+				if ((i == 1 && format[i] == 0))
+				{	free(buffer), va_end(arg);
+					return (-1); }
+				else if (format[largo_format] != 10)
+				{	write(1, buffer, (i - ocurrencias) + (j_temp_2));
+					free(buffer), va_end(arg);
+					return (-1);
+				}
+				else
+				{	buffer[j] = format[i - 1], j++, buffer[j] = format[i]; } }
+			if (get != NULL)
+			{	j_temp  += get(buffer, arg, j), j += j_temp, ocurrencias++;
+				j_temp_2 += j_temp, j_temp = 0; } }
+		i++, j++; }
+	write(1, buffer, (i - ocurrencias) + (j_temp_2)), va_end(arg), free(buffer);
 	return ((i - ocurrencias) + j_temp_2);
 }
+/*	printf(" I %d \n",i) printf(" J %d \n",j)*/
+/*	printf("Ocurrencia %d\n",ocurrencias) printf("Jtemp_2 %d\n",j_temp_2);*/
 
