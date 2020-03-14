@@ -81,10 +81,19 @@ int rev_string(char *buffer, va_list list, int index_buffer)
 	int b, c, i;
 	int length;
 	char *string_rev;
+	char *temp_2 = "(null)";
 	char temp;
 
 	string_rev = va_arg(list, char *);
 	length = _strlen(string_rev);
+	if (string_rev == NULL)
+	{
+		for (i = 0; temp_2[i] != '\0'; i++, index_buffer++)
+		{
+			buffer[index_buffer] = temp_2[i];
+		}
+		return (i - 1);
+	}
 	b = 0;
 	c = length;
 	while (c >= b)
@@ -100,7 +109,7 @@ int rev_string(char *buffer, va_list list, int index_buffer)
 		buffer[index_buffer] = string_rev[i];
 		index_buffer++;
 	}
-	return (i);
+	return (i - 1);
 }
 
 /**
