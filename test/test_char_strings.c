@@ -11,7 +11,7 @@ int main(void)
 	int l2;
 	l2 = 0;
 
-	l2 = printf("%\n");
+	l2 = _printf("22%22\n");
 	printf("%d\n",l2);
 
 
@@ -49,7 +49,7 @@ int main(void)
 	printf("printf(\"%\") : %d\n", printf("%"));
 	printf("_printf(\"%\"): %d\n", _printf("%"));
 	printf("printf(\"%\") : %d\n", printf("222%55"));
-	pelen = printf("222%55\n");
+	pelen = _printf("222%55\n");
 	printf("%d\n",pelen);
 	str = "hello, world";
 	printf("=====================\n");
