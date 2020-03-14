@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 	buffer = create_buffer(1024);
-	if (!buffer)
+	if (buffer == NULL)
 		return (-1);
 	while (format[i] && format)
 	{
@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 			j = 0;
 			free(buffer);
 			buffer = create_buffer(1024);
-			if (!buffer)
+			if (buffer == NULL)
 				return (-1); }
 		if (format[i] != '%')
 			buffer[j] = format[i];
