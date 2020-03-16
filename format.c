@@ -4,10 +4,9 @@
  *
  *
  */
-int print_percentage_literal(char *buffer, va_list list,int index_buffer)
+int print_percentage_literal(char *buffer,__attribute__((unused))va_list list ,int index_buffer)
 {
 	buffer[index_buffer] = '%';
-
 	return (0);
 }
 
@@ -41,9 +40,9 @@ int print_str(char *buffer, va_list list,int index_buffer)
 	int i;
 	i = 0;
 	char * null_case = "(null)";
-	printf("hello\n");
+	/*	printf("hello\n");*/
 	char * p = (char *) va_arg(list,char *);
-	printf("HOLABBE\n");
+	/*	printf("HOLABBE\n");*/
 	if (p == 0 || p == NULL)
 	{
 		for (i = 0; null_case[i] != '\0'; ++i,index_buffer++)

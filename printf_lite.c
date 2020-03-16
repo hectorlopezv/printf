@@ -19,10 +19,14 @@ int _printf(const char *format, ...)
 	int (*get)(char *, va_list,int);
 
 	va_start(arg, format);
+	if (!format)
+		return (-1);
+
 	buffer = malloc(1024);
 	if (buffer == NULL)
 		return (0);
-	printf("tamano %lu\n",strlen(format));
+
+	/*	printf("tamano %lu\n",strlen(format));*/
 	while (format[i])
 	{
 		if (j == 1024)
@@ -44,7 +48,7 @@ int _printf(const char *format, ...)
 
 			if( get != NULL)
 			{
-				printf("entro\n");
+				/*	printf("entro\n");*/
 				j_temp  += get(buffer,arg,j);
 				j += j_temp;
 				ocurrencias++;
@@ -55,14 +59,16 @@ int _printf(const char *format, ...)
 		i++;
 		j++;
 
-		printf("I %d\n",i);
-		printf("J %d\n",j);
+		/*	printf("I %d\n",i);
+			printf("J %d\n",j);
+		 */
 	}
-	//	printf("valor de J %d\n",j);
-	//	printf("valor de I %d\n",i);
-	//	printf("valor J_temp %d \n",j_temp);
-	//	printf("valor ocurrencias %d\n",ocurrencias);
-	//	printf("suma de todo %d\n",(i - ocurrencias) + j_temp_2);
+	/*	printf("valor de J %d\n",j);
+		printf("valor de I %d\n",i);
+		printf("valor J_temp %d \n",j_temp);
+		printf("valor ocurrencias %d\n",ocurrencias);
+		printf("suma de todo %d\n",(i - ocurrencias) + j_temp_2);
+	 */
 	write(1,buffer,(i - ocurrencias) + (j_temp_2));
 	va_end(arg);
 	free(buffer);
