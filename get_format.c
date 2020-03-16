@@ -1,11 +1,18 @@
 #include "holberton.h"
 
+/**
+ * get_format - function that return the text format
+ *
+ * @format: char to check
+ * Return: return format, return null if error
+ */
+
 int (*get_format(char format))(char *, va_list, int)
 {
 	int i;
 
 	i = 0;
-	struct formats formato[] = {
+	formats_t formato[] = {
 		{'d', print_int},
 		{'i', print_int},
 		{'c', print_char},
