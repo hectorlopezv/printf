@@ -77,6 +77,12 @@ int print_char(char *buffer, va_list list, int index_buffer)
 	return (0);
 }
 
+/**
+ *create_buffer - create dynamic buffer
+ *@size: size of the buffer
+ *Return: return buffer
+ */
+
 char *create_buffer(int size)
 {
 	char *buffer;

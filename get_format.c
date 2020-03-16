@@ -11,7 +11,6 @@ int (*get_format(char format))(char *, va_list, int)
 {
 	int i;
 
-	i = 0;
 	formats_t formato[] = {
 		{'d', print_int},
 		{'i', print_int},
@@ -20,6 +19,10 @@ int (*get_format(char format))(char *, va_list, int)
 		{'%', print_percentage_literal},
 		{'\0', NULL}
 	};
+
+
+	i = 0;
+
 
 	while (i < 5)
 	{

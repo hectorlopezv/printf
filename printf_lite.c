@@ -9,11 +9,10 @@
 int _printf(const char *format, ...)
 {	va_list arg;
 	char *buffer;
-	int i, j, j_temp, j_temp_2, ocurrencias;
 	int (*get)(char *, va_list, int);
+	int i = 0, j = 0, j_temp = 0, j_temp_2 = 0, ocurrencias = 0;
 
 	va_start(arg, format);
-	i = 0, j = 0, j_temp = 0, j_temp_2 = 0, ocurrencias = 0;
 	if (!format)
 		return (-1);
 	buffer = create_buffer(1024);
