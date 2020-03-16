@@ -33,6 +33,7 @@ int _printf(const char *format, ...)
 
 	write(1, buffer, _strlen(buffer));
 	free(buffer);
-	va_end(ard);
+	va_end(arg);
 	return (0);
 }
+
