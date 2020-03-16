@@ -14,7 +14,7 @@
 	{
 		char c;
 		int (*f)(char *, va_list, int a);
-	}formats_t;
+	} formats_t;
 
 int  print_int(char *buffer, va_list list, int a);
 int print_str(char *buffer, va_list list, int a);
