@@ -1,4 +1,3 @@
-/*all credits to narnat https://gist.github.com/narnat/95733cd0ad7bfac0d90697292914c407*/
 /**
  * convert - converter function, a clone of itoa
  * @num: number
@@ -13,6 +12,7 @@ char *convert(long int num, int base)
 	char sign = 0;
 	char *ptr;
 	unsigned long n = num;
+
 	if (num < 0)
 	{
 		n = -num;
@@ -28,3 +28,6 @@ char *convert(long int num, int base)
 		*--ptr = sign;
 	return (ptr);
 }
+
+/*  all credits to narnat*/
+/*https://gist.github.com/narnat/95733cd0ad7bfac0d90697292914c407*/
