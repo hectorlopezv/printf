@@ -14,6 +14,8 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 	buffer = malloc(1024);
+	if (buffer == NULL)
+		return (NULL);
 
 	while (format[i])
 	{
@@ -28,4 +30,9 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
+
+	write(1, buffer, _strlen(buffer));
+	free(buffer);
+	va_end(ard);
+	return (0)
 }
