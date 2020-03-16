@@ -4,7 +4,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-	struct formats[] = {
+struct format = 
+{
+	char c;
+	void (*f)(va_list,char);
+};
+	formato formats[] = {
 		{'d', print_d},
 		{'i', print_d},
 		{'c', print_c},
@@ -21,7 +26,8 @@
 		{'p', print_p},
 		{'\0', NULL}
 	};
-typedef struct formats format;
+
+typedef struct format formato;
 
 #endif
 
