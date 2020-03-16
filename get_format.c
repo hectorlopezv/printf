@@ -1,15 +1,30 @@
 #include "holberton.h"
 
-void print_int(char *buffer, va_list lista)
+/**
+ *
+ *
+ */
+void (*get_format(char *format))(char *, va_list)
 {
+	int i;
 
-}
-void print_str(char *buffer, va_list lista)
-{
+	i = 0;
+	struct formats formato[] =
+	{
+		{'d', print_int},
+		{'i', print_int},
+		{'c', print_char},
+		{'s', print_str},
+		{'\0', NULL}
+	};
 
-}
-void print_char(char *buffer, va_list lista)
-{
+	while (i < 4)
+	{
+		if (*format == formato[i].c)
+			return (formato[i].f);
 
+		i++;
+	}
+	return (NULL);
 }
 
