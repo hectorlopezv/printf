@@ -15,14 +15,13 @@ int _printf(const char *format, ...)
 	va_start(arg, format);
 	buffer = malloc(1024);
 	if (buffer == 0)
-		return (NULL);
+		return (0);
 
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			get_format(format[i]);
 		}
 		else
 		{
