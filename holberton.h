@@ -12,6 +12,7 @@
 		{'\0', NULL}
 	};
 typedef struct formats format;
+int _printf(const char *format, ...);
 
 #endif
 
