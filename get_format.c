@@ -1,16 +1,11 @@
 #include "holberton.h"
 
-/**
- *
- *
- */
-int (*get_format(char format))(char *, va_list,int)
+int (*get_format(char format))(char *, va_list, int)
 {
 	int i;
 
 	i = 0;
-	struct formats formato[] =
-	{
+	struct formats formato[] = {
 		{'d', print_int},
 		{'i', print_int},
 		{'c', print_char},
