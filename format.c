@@ -42,11 +42,12 @@ int print_int(char *buffer, va_list list, int index_buffer)
  */
 int print_str(char *buffer, va_list list, int index_buffer)
 {
-	int i = 0;
-	char *null_case = "(null)";
-	/*	printf("hello\n");*/
+	int i;
+	char *null_case;
 	char *p = (char *) va_arg(list, char *);
-	/*	printf("HOLABBE\n");*/
+
+	i = 0;
+	null_case = "(null)";
 
 	if (p == 0 || p == NULL)
 	{
