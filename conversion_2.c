@@ -36,12 +36,13 @@ int print_rot13(char *buffer, va_list list, int index_buffer)
 	char *null_case;
 
 	char test[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char res[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char rest[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	p = va_arg(list, char *);
-	null_case = "(null)";
+	
 	if (p == NULL)
 	{
+		null_case = "(null)";
 		for (i = 0; null_case[i] != '\0'; ++i, index_buffer++)
 		{
 			buffer[index_buffer]  = null_case[i];
@@ -61,7 +62,6 @@ int print_rot13(char *buffer, va_list list, int index_buffer)
 			}
 		}
 	}
-	p[a] = '\0';
 
 	for (i = 0; p[i] != '\0'; ++i, index_buffer++)
 		buffer[index_buffer]  = p[i];
