@@ -29,7 +29,7 @@ int print_to_binary(char *buffer, va_list list, int index_buffer)
  *Return: return
  */
 
-int print_rot13(char *buffer, va_list list , int index_buffer)
+int print_rot13(char *buffer, va_list list, int index_buffer)
 {
 	int a, b, i;
 	char *p;
@@ -40,7 +40,7 @@ int print_rot13(char *buffer, va_list list , int index_buffer)
 
 	p = va_arg(list, char *);
 	null_case = "(null)";
-	if (p == 0 || p == NULL)
+	if (p == NULL)
 	{
 		for (i = 0; null_case[i] != '\0'; ++i, index_buffer++)
 		{
@@ -61,6 +61,7 @@ int print_rot13(char *buffer, va_list list , int index_buffer)
 			}
 		}
 	}
+	p[a] = '\0';
 
 	for (i = 0; p[i] != '\0'; ++i, index_buffer++)
 		buffer[index_buffer]  = p[i];
