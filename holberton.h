@@ -27,7 +27,9 @@ char *convert(long int num, int base);
 char *create_buffer(int size);
 int print_to_binary(char *buffer, va_list list, int a);
 int print_pointer(char *buffer, va_list list, int a);
-
+int print_rot13(char *buffer, va_list list, int index_buffer);
+int _strlen(char *s);
+int rev_string(char *buffer, va_list list, int index_buffer);
 
 #endif
 
