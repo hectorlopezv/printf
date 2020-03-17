@@ -21,7 +21,7 @@ int print_percentage_literal(char *buffer,
  * @index_buffer: arguments counter
  * Return: 0 on success
  */
-int print_int(char *buffer, va_list list, int index_buffer)
+int print_int(char *buffer, va_list list, int  index_buffer)
 {
 	int i;
 	char *p;
@@ -40,7 +40,7 @@ int print_int(char *buffer, va_list list, int index_buffer)
  * @index_buffer: arguments counter
  * Return: 0 on success
  */
-int print_str(char *buffer, va_list list, int index_buffer)
+int print_str(char *buffer, va_list list, int  index_buffer)
 {
 	int i;
 	char *null_case;
@@ -85,7 +85,7 @@ int print_char(char *buffer, va_list list, int index_buffer)
 
 char *create_buffer(int size)
 {
-	char *buffer;
+	char * buffer;
 
 	buffer = malloc(size);
 	if (buffer == NULL)

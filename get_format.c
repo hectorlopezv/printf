@@ -7,7 +7,7 @@
  * Return: return format, return null if error
  */
 
-int (*get_format(char format))(char *, va_list, int)
+int (*get_format(char format))(char *, va_list, int  )
 {
 	int i;
 
