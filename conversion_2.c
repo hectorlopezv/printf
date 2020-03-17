@@ -29,15 +29,26 @@ int print_to_binary(char *buffer, va_list list, int index_buffer)
  *Return: return
  */
 
-int print_rot13(char *buffer,va_list list ,int index_buffer)
+int print_rot13(char *buffer, va_list list , int index_buffer)
 {
 	int a, b, i;
 	char *p;
+	char *null_case;
 
 	char test[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char res[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	p = va_arg(list, char *);
+	null_case = "(null)";
+	if (p == 0 || p == NULL)
+	{
+		for (i = 0; null_case[i] != '\0'; ++i, index_buffer++)
+		{
+			buffer[index_buffer]  = null_case[i];
+
+		}
+		return (i - 1);
+	}
 
 	for (a = 0; p[a] != '\0'; a++)
 	{
