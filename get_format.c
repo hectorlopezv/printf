@@ -19,6 +19,7 @@ int (*get_format(char format))(char *, va_list, int)
 		{'%', print_percentage_literal},
 		{'b', print_to_binary},
 		{'R', print_rot13},
+		{'r', rev_string},
 		{'\0', NULL}
 	};
 
@@ -26,7 +27,7 @@ int (*get_format(char format))(char *, va_list, int)
 	i = 0;
 
 
-	while (i < 7)
+	while (i < 8)
 	{
 		if (format == formato[i].c)
 			return (formato[i].f);
