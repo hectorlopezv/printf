@@ -1,0 +1,61 @@
+.Dd 16/3/2020                \" DATE
+.Dt _printf(3)               \" Program name and manual section number
+.Sh NAME                     \" Section Header - required - don't modify
+.Nm _printf
+.Nm -
+.Nm function that format and print data A.K.A "printf"
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Nm                      \" [-abcd]
+.Op Format               \" [-a path]
+.Ar arg0,                 \" Underlined argument - use .Ar anywhere to underline
+arg1 ...                 \" Arguments
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+print arguments based in the format (char, string, integer, decimal)
+.br
+according to the next options:
+.Bl -tag -width -indent  \" Begins a tagged list
+.It  %c             \" Each item preceded by .It macro
+to print 
+.Ar chars
+.It %s
+to print 
+.Ar strngs
+.It %i              
+to print 
+.Ar Integers
+.It %d
+to print 
+.Ar Decimals
+.El                      \" Ends the list
+.Sh EXAMPLE
+.Nm Printing a char using _printf function:
+.br
+_printf("Character: %c\n", 'H');
+.br
+.Ar Output -
+Character: H
+.br
+
+.Nm Printing a string using _printf function:
+.br
+_printf("String: %s\n", "I am a string !");
+.br
+.Ar Output -
+String: I am a string !
+.Pp
+.Sh FILES                \" File used or created by the topic of the man page
+.Bl -tag -width "/Users/joeuser/Library/really_long_file_name" -compact
+.It printf_lite.c
+File that contains the main function.
+.It holberton.h
+File that contains all the libraries and prototypes
+.It get_format.c
+File with the function that identifies the format 
+.It format.c
+File with the function that print the argument based in the format
+.It conversion.c
+File with the function that convert integer to string
+.Ar (All credits to Nartnat - https://gist.github.com/narnat)
+.El                      \" Ends the list
+.Sh AUTHOR
+Written by Hector Vinicio Lopez Molinares and Kevin Arevalo
