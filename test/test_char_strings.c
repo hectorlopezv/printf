@@ -2,10 +2,46 @@
 #include <limits.h>
 
 int main(void)
+
 {
+
 	int alen, elen,pelen;
 	char c = 'z';
 	char *str = NULL;
+	int l2;
+	l2 = 0;
+
+	l2 = printf("%\n");
+	printf("%d\n",l2);
+
+
+	elen = printf("Expected: %k\n");
+	printf("%d\n",elen);
+
+	alen = printf("Expected: %k\n");
+	printf("%d\n",alen);
+
+	alen = printf("actual: %k\n");
+	printf("%d\n",alen);
+
+
+	printf("Expected: %s\n",(char *)0);
+	_printf("Actual: %s\n",(char *)0);
+
+	alen = printf(NULL);
+	elen = _printf(NULL);
+	printf("tamano null %d\n",alen);
+	printf("tamano null %d\n",elen);
+
+	printf("Expected: %\n");
+	_printf("Actual: %\n");
+
+
+
+
+
+
+
 	printf("START OF TEST\n");
 	printf("=====================\n");
 	printf("printf(NULL)  : %d\n", printf(str));
@@ -53,4 +89,8 @@ int main(void)
 	alen = _printf("Actual  : %c%%%c%%%%%s%c%s%s\n", INT_MAX, INT_MIN, "hello", 0, "holberton", 0);
 	printf("Expected: %d\n", elen);
 	printf("Actual  : %d\n", alen);
+
+
+
+	return (0);
 }
