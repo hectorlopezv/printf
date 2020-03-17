@@ -36,7 +36,7 @@ int print_rot13(char *buffer, va_list list, int index_buffer)
 	char *null_case;
 
 	char test[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char rest[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char res[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	p = va_arg(list, char *);
 	if (p == NULL)
