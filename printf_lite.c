@@ -42,10 +42,9 @@ int _printf(const char *format, ...)
 				}
 				else
 				{	buffer[j] = format[i - 1];
-					j_temp_2 += 1;
+					/*j_temp_2 += 1;*/
 					j++;
 					buffer[j] = format[i];
-					j_temp_2 += 1;
 				}
 			}
 			if (get != NULL)
