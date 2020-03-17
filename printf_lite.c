@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	buffer = create_buffer(1024);
 	if (!buffer)
 		return (-1);
-	while (format[i])
+	while (format[i] && format)
 	{
 		if (j == 1024)
 		{	write(1, buffer,1024);
