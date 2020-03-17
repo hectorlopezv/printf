@@ -15,12 +15,11 @@ int _printf(const char *format, ...)
 	va_start(arg, format);
 	if (format == NULL)
 		return (-1);
-	buffer = create_buffer(1024);
+	buffer = create_buffer(7000);
 	if (buffer == NULL)
 		return (-1);
 	while (format[i] && format)
 	{
-
 
 		if (format[i] != '%')
 		{
