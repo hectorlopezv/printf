@@ -21,7 +21,7 @@ int print_percentage_literal(char *buffer,
  * @index_buffer: arguments counter
  * Return: 0 on success
  */
-int print_int(char *buffer, va_list list, int index_buffer)
+int print_int(char *buffer, va_list list, int  index_buffer)
 {
 	int i;
 	char *p;
@@ -40,7 +40,7 @@ int print_int(char *buffer, va_list list, int index_buffer)
  * @index_buffer: arguments counter
  * Return: 0 on success
  */
-int print_str(char *buffer, va_list list, int index_buffer)
+int print_str(char *buffer, va_list list, int  index_buffer)
 {
 	int i;
 	char *null_case;
@@ -93,21 +93,6 @@ char *create_buffer(int size)
 		return (NULL);
 	}
 	return (buffer);
-
-}
-
-int print_to_binary(char *buffer, va_list list, int index_buffer)
-{
-	int i;
-	char *p;
-
-
-	p =  convert(va_arg(list, unsigned int), 2);
-	for (i = 0; p[i] != '\0'; ++i, index_buffer++)
-		buffer[index_buffer]  = p[i];
-
-	return (i - 1);
-
 
 }
 
