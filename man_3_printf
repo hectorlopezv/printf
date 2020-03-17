@@ -1,4 +1,4 @@
-.Dd 16/3/2020                \" DATE
+.Dd 16/3/2020               \" DATE
 .Dt _printf(3)               \" Program name and manual section number
 .Sh NAME                     \" Section Header - required - don't modify
 .Nm _printf
