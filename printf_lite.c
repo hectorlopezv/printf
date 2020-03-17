@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int i = 0, j = 0, j_temp = 0, j_temp_2 = 0, ocurrencias = 0;
 
 	va_start(arg, format);
-	if (!format)
+	if (format == NULL)
 		return (-1);
 	buffer = create_buffer(1024);
 	if (!buffer)
@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	while (format[i])
 	{
 		if (j == 1024)
-		{	write(1, buffer, (i - ocurrencias) + (j_temp_2));
+		{	write(1, buffer,1024);
 			j = 0;
 			free(buffer);
 			buffer = create_buffer(1024);
