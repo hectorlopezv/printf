@@ -38,4 +38,5 @@ Note: The formats are equal to the original printf
 |conversion_2.c| functions for handling %r,%R,%b|
 |man_3_printf|man page for printf_lite|
 |holberton_h|header file containing declarations of functions used|
+
 *Note: work still in progress. 
