@@ -25,6 +25,7 @@ This following formats are implemented in this lite version of printf.
 |%|
 
 Example : _printf("%s","Hello, Holberton");
+
 Note: The formats are equal to the original printf
 
 ### Files
