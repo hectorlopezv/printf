@@ -23,6 +23,7 @@ This following formats are implemented in this lite version of printf.
 | %i|
 |%c|
 |%|
+
 Example : _printf("%s","Hello, Holberton");
 Note: The formats are equal to the original printf
 
@@ -36,5 +37,5 @@ Note: The formats are equal to the original printf
 |printf_lite.c| logic of printf_lite|
 |conversion_2.c| functions for handling %r,%R,%b|
 |man_3_printf|man page for printf_lite|
-|holberton_h|header file containing declarations of functions used
+|holberton_h|header file containing declarations of functions used|
 *Note: work still in progress. 
