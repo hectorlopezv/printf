@@ -8,10 +8,85 @@ int main(void)
 	int alen, elen,pelen;
 	char c = 'z';
 	char *str = NULL;
-	int l2;
+	int l2,pepe;
 	l2 = 0;
+	_printf("Her mom had warned her. She had been warned time and again, but she had refused to believe her. She had done everything right and she knew she would be rewarded for doing so with the promotion. So when the promotion was given to her main rival, it not only stung, it threw her belief system into disarray. It was her first big lesson in life, but not the last.Her mom had warned her. She had been warned time and again, but she had refused to believe her. She had done everything right and she knew she would be rewarded for doing so with the promotion. So when the promotion was given to her main rival, it not only stung, it threw her belief system into disarray. It was her first big lesson in life, but not the last.Her mom had warned her. She had been warned time and again, but she had refused to believe her. She had done everything right and she knew she would be rewarded for doing so with the promotion. So when the promotion was given to her main rival, it not only stung, it threw her belief system into disarray. It was her first big lesson in life, but not the last.Her mom had warned her.it not only stung, it threw her belief system into disarray. It was her first big lesson in life, bl");
+	putchar('\n');
 
-	l2 = printf("%\n");
+
+
+
+
+	printf("Let's print a simple sentence.\n");
+	_printf("Let's print a simple sentence.\n");
+
+	printf("%c", 'S');
+	putchar('\n');
+	_printf("%c", 'S');
+	putchar('\n');
+	printf("A char inside a sentence: %c. Did it work?\n", 'F');
+	_printf("A char inside a sentence: %c. Did it work?\n", 'F');
+
+
+	printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
+	_printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
+
+	printf("%s", "This sentence is retrieved from va_args!\n");
+	_printf("%s", "This sentence is retrieved from va_args!\n");
+
+	printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
+	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
+
+	printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+
+	printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
+	_printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
+
+	printf("%%");
+	putchar('\n');
+	_printf("%%");
+	putchar('\n');
+
+	printf("Should print a single percent sign: %%\n");
+
+	_printf("Should print a single percent sign: %%\n");
+
+	printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+	_printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+
+	printf("css%ccs%scscscs", 'T', "Test");
+	putchar('\n');
+	_printf("css%ccs%scscscs", 'T', "Test");
+	putchar('\n');
+
+	pepe =_printf(NULL);
+	printf("%d\n",pepe);
+
+	printf("%c", '\0');
+	putchar('\n');
+
+	_printf("%c", '\0');
+	putchar('\n');
+
+	printf("%");
+	putchar('\n');
+
+	_printf("%");
+	putchar('\n');
+
+	printf("%!\n");
+	_printf("%!\n");
+
+	printf("%K\n");
+
+	_printf("%K\n");
+
+
+
+	putchar('\n');
+
+	l2 = _printf("22%22");
 	printf("%d\n",l2);
 
 
@@ -28,9 +103,7 @@ int main(void)
 	printf("Expected: %s\n",(char *)0);
 	_printf("Actual: %s\n",(char *)0);
 
-	alen = printf(NULL);
 	elen = _printf(NULL);
-	printf("tamano null %d\n",alen);
 	printf("tamano null %d\n",elen);
 
 	printf("Expected: %\n");
@@ -49,7 +122,7 @@ int main(void)
 	printf("printf(\"%\") : %d\n", printf("%"));
 	printf("_printf(\"%\"): %d\n", _printf("%"));
 	printf("printf(\"%\") : %d\n", printf("222%55"));
-	pelen = printf("222%55\n");
+	pelen = _printf("222%55\n");
 	printf("%d\n",pelen);
 	str = "hello, world";
 	printf("=====================\n");

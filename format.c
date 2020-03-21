@@ -58,8 +58,11 @@ int print_str(char *buffer, va_list list, int  index_buffer)
 	}
 
 	for (i = 0; p[i] != '\0'; ++i, index_buffer++)
+	{
+
 		buffer[index_buffer]  = p[i];
 
+	}
 	return (i - 1);
 }
 

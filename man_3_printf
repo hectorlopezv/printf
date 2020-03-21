@@ -15,16 +15,16 @@ print arguments based in the format (char, string, integer, decimal)
 according to the next options:
 .Bl -tag -width -indent  \" Begins a tagged list
 .It  %c             \" Each item preceded by .It macro
-to print 
+to print
 .Ar chars
 .It %s
-to print 
+to print
 .Ar strngs
-.It %i              
-to print 
+.It %i
+to print
 .Ar Integers
 .It %d
-to print 
+to print
 .Ar Decimals
 .El                      \" Ends the list
 .Sh EXAMPLE
@@ -50,7 +50,7 @@ File that contains the main function.
 .It holberton.h
 File that contains all the libraries and prototypes
 .It get_format.c
-File with the function that identifies the format 
+File with the function that identifies the format
 .It format.c
 File with the function that print the argument based in the format
 .It conversion.c
