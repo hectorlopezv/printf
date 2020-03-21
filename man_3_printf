@@ -30,7 +30,7 @@ to print
 .Sh EXAMPLE
 .Nm Printing a char using _printf function:
 .br
-_printf("Character: %c\n", 'H');
+_printf("Character: %c \\n", 'H');
 .br
 .Ar Output -
 Character: H
@@ -38,7 +38,7 @@ Character: H
 
 .Nm Printing a string using _printf function:
 .br
-_printf("String: %s\n", "I am a string !");
+_printf("String: %s \\n", "I am a string !");
 .br
 .Ar Output -
 String: I am a string !
