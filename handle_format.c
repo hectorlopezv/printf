@@ -36,7 +36,7 @@ int handle_format(int largo_format, va_list arg, const char *format, char **buff
 		}
 		else if (format[largo_format] != 10)
 		{
-			write(1, *buffer, (i - *ocurrencias) + (*j_temp_2));
+			write(1, *buffer,*l);
 			va_end(arg);
       free(*buffer);
 			return (-1);

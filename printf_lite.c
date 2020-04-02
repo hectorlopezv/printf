@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	int format_fail = 0;
 
 	va_start(arg, format);
-	buffer = create_buffer(1024);
+	buffer = create_buffer(1000);
 	if (format == NULL)
   {
     free(buffer);
@@ -34,6 +34,7 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
       printing_char_1(&buffer, format[i], &j, &l);
+      
 
 		}
 		else
@@ -49,9 +50,10 @@ int _printf(const char *format, ...)
     
 	}
 
-  if (l > 0)
+  
+  
     write(1, buffer, l);
-
+  
 
 
 free(buffer);

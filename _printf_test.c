@@ -134,7 +134,7 @@ _printf("Actual: %\n");
 	pelen = _printf("222%55\n");
 	_printf("%d\n",pelen);
 	str = "hello, world";
-	_printf("=====================\n");
+	_printf("\n=====================\n");
 	_printf("*****CHAR*****\n");
 	_printf("=====================\n");
 	_printf("Expected   : %c\n", 'a');
@@ -143,6 +143,7 @@ _printf("Actual: %\n");
 	alen = _printf("Actual     : %c\n", c);
 	_printf("Expected   : %i\n", elen);
 	_printf("Actual     : %i\n", alen);
+  /*
 	_printf("Expected   : %cc\n", 'a');
 	_printf("Actual     : %cc\n", 'a');
 	_printf("Expected   : %c\n", 53);
@@ -171,8 +172,8 @@ _printf("Actual: %\n");
 	alen = _printf("%s", "");
 	_printf("Expected   : %i\n", elen);
 	_printf("Actual     : %i\n", alen);
-	
-  /*
+	*/
+  
   _printf("Expected   : %sschool\n", "holberton");
 	_printf("Actual     : %sschool\n", "holberton");
 	elen = _printf("Expected: %c%%%c%%%%%s%c%s%s\n", INT_MAX, INT_MIN, "hello", 0, "holberton", 0);
@@ -198,9 +199,9 @@ _printf("Complete the sentence: You %r nothing, Jon Snow.\n", "know");
 	putchar('\n');
 	elen = _printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
 	_printf("%d\n",elen);
-  */
   
-  /*
+  
+  
 	pelen = _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "xabj");
   //printf("%d\n",pelen);
 	_printf("%d\n",pelen);
@@ -226,7 +227,7 @@ _printf("Complete the sentence: You %r nothing, Jon Snow.\n", "know");
 	putchar('\n');
 	pelen = _printf("%pppp", (void *)0x7fff5100b6f8);
 	_printf("%d\n",pelen);
-
+/*
 
 	_printf("%u\n", 1024);
 	_printf("%u\n", -1024);
