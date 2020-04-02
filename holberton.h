@@ -67,6 +67,9 @@ int handle_format(int largo_format, va_list arg, const char *format, char **buff
 
 int (*get_format(char format))(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *ocurrencias, int *j_temp);
 
+int print_rot13(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *ocurrencias, int *j_temp);
+
+int print_pointer_void(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *ocurrencias, int *j_temp);
 
 #endif
 

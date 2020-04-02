@@ -226,13 +226,13 @@ int print_rot13(char **buffer, va_list list, int  *j, int *l, int *j_temp_2, int
 	p1 = create_buffer(length + 1);
 
 	/* fill the string*/
-	for (i = 0; p[i] != NULL; i++)
+	for (i = 0; p[i] != 0; i++)
 	{
 		p1[i]  = p[i];
 	}
-	for (a = 0; p1[a] != NULL; a++)
+	for (a = 0; p1[a] != 0; a++)
 	{
-		for (b = 0; test[b] != NULL; b++)
+		for (b = 0; test[b] != 0; b++)
 		{
 			if (p1[a] == test[b])
 			{
@@ -278,11 +278,10 @@ int print_rot13(char **buffer, va_list list, int  *j, int *l, int *j_temp_2, int
 int rev_string(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *ocurrencias, int *j_temp)
 {
 	int index, length;
-	char *temp_2;
+	char *temp_2, *p;
 
 	temp_2 = "(null)";
-
-	char *p = (char *) va_arg(list, char *);
+	p = (char *) va_arg(list, char *);
 
 	length = _strlen(p);
 
