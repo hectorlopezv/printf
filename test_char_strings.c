@@ -19,7 +19,7 @@ int main(void)
 
 
 
-
+/*
 	elen = printf("Let's print a simple sentence.\n");
 	printf("%d\n",elen);
 	pelen = _printf("Let's print a simple sentence.\n");
@@ -147,7 +147,7 @@ int main(void)
 
 
 
-
+*/
 
 
 	printf("START OF TEST\n");
