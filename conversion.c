@@ -91,17 +91,4 @@ char *create_buffer(int size)
  *Return: return
  */
 
-void check_buffer(const char *format, char **buffer, int i, int *l, int *j, int *j_temp_2, int *ocurrencias)
-{
-
-	write(1, *buffer, *j);
-	free(*buffer);
-	*buffer = create_buffer(4);
-	*j = 0;
-	*l = 0;
-	(*buffer)[*j] = format[i];
-	(*l)++;
-
-
-}
 

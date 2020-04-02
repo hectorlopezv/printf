@@ -27,15 +27,7 @@ int print_str(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *o
 	{
 		for (i = 0; null_case[i] != '\0'; ++i, (*j)++)
 		{
-			if (*j < 4)
-			{
-				(*buffer)[*j]  = null_case[i];
-				(*l)++;
-			}
-			else
-			{
-				check_buffer(null_case, buffer, i, l, j, j_temp_2, ocurrencias);
-			}
+      printing_char_1(buffer, null_case[i], j, l, j_temp_2, ocurrencias, j_temp);
 		}
 
 		return (i - 1);
@@ -44,15 +36,7 @@ int print_str(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *o
 	/* no null case*/
 	for (i = 0; p[i]; i++, (*j)++)
 	{
-		if (*j < 4)
-		{
-			(*buffer)[*j]  = p[i];
-			(*l)++;
-		}
-		else
-		{
-			check_buffer(p, buffer, i, l, j, j_temp_2, ocurrencias);
-		}
+      printing_char_1(buffer, p[i], j, l, j_temp_2, ocurrencias, j_temp);
 
 	}
 	return (i - 1);
@@ -72,116 +56,7 @@ int print_str(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *o
  *Return: return
  */
 
-int print_S(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *ocurrencias, int *j_temp)
-{
-	int i;
-	char *null_case, *p, *hex, *x_word;
-
-	i = 0;
-	p = va_arg(list, char *);
-	null_case = "(null)";
-	x_word = "0";
-
-	if (p == 0 || p == NULL)
-	{
-		for (i = 0; null_case[i] != '\0'; ++i, (*j)++)
-		{
-			if (*j < 4)
-			{
-				(*buffer)[*j]  = null_case[i];
-				(*l)++;
-			}
-			else
-			{
-				check_buffer(null_case, buffer, i, l, j, j_temp_2, ocurrencias);
-			}
-		}
-
-		return (i - 1);
-	}
-
-	/* no null case*/
-	for (i = 0; p[i] != '\0'; ++i, (*j)++)
-	{
-		if (*j < 4)
-		{
-			if ((p[i] > 0 && p[i] < 32) || p[i] >= 127)
-			{
-				hex = convert_2(p[i], 16);
-				write_0x(buffer, list, j, l, j_temp_2, ocurrencias, j_temp);
-				if (_strlen(hex) == 0)
-				{
-					if (hex[0] >= 97 && hex[0] <= 102)
-					{
-						hex[0] = hex[0] - 32;
-					}
-					printing_char(buffer, x_word, j, l, j_temp_2, ocurrencias, j_temp);
-				}
-
-				else if (_strlen(hex) == 1)
-				{
-					if (hex[0] >= 97 && hex[0] <= 102)
-					{
-						hex[0] = hex[0] - 32;
-					}
-					if (hex[1] >= 97 && hex[1] <= 102)
-					{
-						hex[1] = hex[1] - 32;
-					}
-				}
-
-				printing_char(buffer, hex, j, l, j_temp_2, ocurrencias, j_temp);
-			}
-			else
-			{
-				(*buffer)[*j] = p[i];
-				(*l)++;
-			}
-		}
-		else
-		{
-			write(1, *buffer, *j);
-			free(*buffer);
-			*buffer = create_buffer(4);
-			*j = 0;
-			*l = 0;
-			if ((p[i] > 0 && p[i] < 32) || p[i] >= 127)
-			{
-				hex = convert_2(p[i], 16);
-				write_0x(buffer, list, j, l, j_temp_2, ocurrencias, j_temp);
-				if (_strlen(hex) == 0)
-				{
-					if (hex[0] >= 97 && hex[0] <= 102)
-					{
-						hex[0] = hex[0] - 32;
-					}
-					printing_char(buffer, x_word, j, l, j_temp_2, ocurrencias, j_temp);
-				}
-
-				else if (_strlen(hex) == 1)
-				{
-					if (hex[0] >= 97 && hex[0] <= 102)
-					{
-						hex[0] = hex[0] - 32;
-					}
-
-					if (hex[1] >= 97 && hex[1] <= 102)
-					{
-						hex[1] = hex[1] - 32;
-					}
-				}
-				printing_char(buffer, hex, j, l, j_temp_2, ocurrencias, j_temp);
-			}
-			else
-			{
-				(*buffer)[*j] = p[i];
-				(*l)++;
-			}
-		}
-
-	}
-	return (i - 1);
-}
+gi
 
 
 /**
@@ -211,18 +86,11 @@ int print_rot13(char **buffer, va_list list, int  *j, int *l, int *j_temp_2, int
 		null_case = "(null)";
 		for (i = 0; null_case[i] != '\0'; ++i, (*j)++)
 		{
-			if (*j < 4)
-			{
-				(*buffer)[*j] = null_case[i];
-				(*l)++;
-			}
-			else
-			{
-				check_buffer(null_case, buffer, i, l, j, j_temp_2, ocurrencias);
-			}
+            printing_char_1(buffer, null_case[i], j, l, j_temp_2, ocurrencias, j_temp);
 		}
     return(i - 1);
 	}
+
 	length = _strlen(p + 1);
 	p1 = create_buffer(length);
 
@@ -246,15 +114,7 @@ int print_rot13(char **buffer, va_list list, int  *j, int *l, int *j_temp_2, int
 
 	for (i = 0; p1[i] != '\0'; i++, (*j)++)
 	{
-		if (*j < 4)
-		{
-			(*buffer)[*j]  = p1[i];
-			(*l)++;
-		}
-		else
-		{
-			check_buffer(p1, buffer, i, l, j, j_temp_2, ocurrencias);
-		}
+      printing_char_1(buffer, p[i], j, l, j_temp_2, ocurrencias, j_temp);
 	}
 
 	free(p1);
@@ -291,15 +151,7 @@ int rev_string(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *
 	{
 		for (index = 0; temp_2[index] != '\0'; index++, (*j)++)
 		{
-			if (*j < 4)
-			{
-				(*buffer)[*j] = temp_2[index];
-				(*l)++;
-			}
-			else
-			{
-				check_buffer(temp_2, buffer, index, l, j, j_temp_2, ocurrencias);
-			}
+      printing_char_1(buffer, temp_2[index], j, l, j_temp_2, ocurrencias, j_temp);
 		}
 		return (index - 1);
 	}
@@ -308,15 +160,7 @@ int rev_string(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *
 
 	for (index = length; index >= 0; --index, (*j)++)
 	{
-		if (*j < 4)
-		{
-			(*buffer)[*j] = p[index];
-			(*l)++;
-		}
-		else
-		{
-			check_buffer(p, buffer, index, l, j, j_temp_2, ocurrencias);
-		}
+      printing_char_1(buffer, word[i], j, l, j_temp_2, ocurrencias, j_temp);
 	}
 	return (length + 1);
 }
@@ -343,15 +187,8 @@ void  write_0x(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *
 	word = "\\x";
 	for (i = 0; word[i] != '\0'; ++i, (*j)++)
 	{
-		if (*j < 4)
-		{
-			(*buffer)[*j]  = word[i];
-			(*l)++;
-		}
-		else
-		{
-			check_buffer(word, buffer, i, l, j, j_temp_2, ocurrencias);
-		}
+      printing_char_1(buffer, word[i], j, l, j_temp_2, ocurrencias, j_temp);
 	}
+
 }
 

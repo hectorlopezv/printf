@@ -57,7 +57,7 @@ int printing_char_1(char **buffer, char word, int *j, int *l, int *j_temp_2, int
 
 	i = 0;
 
-	if (*j < 4)
+	if (*j < 1024)
 	{
 		(*buffer)[*j]  = p;
 		(*l)++;
@@ -66,7 +66,7 @@ int printing_char_1(char **buffer, char word, int *j, int *l, int *j_temp_2, int
 	{
 		write(1, *buffer, *j);
 		free(*buffer);
-		*buffer = create_buffer(4);
+		*buffer = create_buffer(1024);
 		*j = 0;
 		*l = 0;
 		(*buffer)[*j] = p;
@@ -101,31 +101,17 @@ int printing_char(char **buffer, char *word, int *j, int *l, int *j_temp_2, int 
 	{
 		for (i = 0; null_case[i] != '\0'; ++i, (*j)++)
 		{
-			if (*j < 4)
-			{
-				(*buffer)[*j]  = null_case[i];
-				(*l)++;
-			}
-			else
-			{
-				check_buffer(null_case, buffer, i, l, j, j_temp_2, ocurrencias);
-			}
+        printing_char_1(buffer, null[i], j, l, j_temp_2, ocurrencias, j_temp);
 		}
 
 		return (i - 1);
 	}
+
 	for (i = 0; p[i] != '\0'; i++, (*j)++)
 	{
-		if (*j < 4)
-		{
-			(*buffer)[*j]  = p[i];
-			(*l)++;
-		}
-		else
-		{
-			check_buffer(p, buffer, i, l, j, j_temp_2, ocurrencias);
-		}
+      printing_char_1(buffer, p[i], j, l, j_temp_2, ocurrencias, j_temp);
 	}
+  
 	return (i - 1);
 }
 
@@ -193,7 +179,7 @@ int print_pointer_void(char **buffer, va_list list, int *j, int *l, int *j_temp_
 	{
       printing_char_1(buffer, word[i], j, l, j_temp_2, ocurrencias, j_temp);
 	}
-  
+
 	return (i - 1 + 2);
 }
 
