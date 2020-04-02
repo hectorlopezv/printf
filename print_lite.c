@@ -1,8 +1,10 @@
 #include "holberton.h"
-#include <string.h>
 
-
-
+/**
+ *_printf - print_lite
+ *@format: format
+ *Return: printf
+ */
 
 int _printf(char *format, ...)
 {
@@ -29,7 +31,7 @@ int _printf(char *format, ...)
 			temp = handle_format(&buffer, format[i], &total_chars, arg);
 			if (temp == -1)
 			{
-				if (format[strlen(format) - 1] == 10)
+				if (format[_strlen(format) - 1] == 10)
 				{
 					p2 += _putchar(&buffer, format[i - 1], &total_chars);
 					p2 += _putchar(&buffer, format[i], &total_chars);

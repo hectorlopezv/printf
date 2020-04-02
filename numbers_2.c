@@ -4,13 +4,12 @@
 /**
  *print_x - print_str
  *@buffer: buffer
- *@formato: list
  *@total_chars: j
  *@list: l
  *Return: return
  */
 
-int print_x(char **buffer, char formato, int *total_chars, va_list list)
+int print_x(char **buffer, int *total_chars, va_list list)
 {
 	int i;
 	char *word;
@@ -31,14 +30,12 @@ int print_x(char **buffer, char formato, int *total_chars, va_list list)
 /**
  *print_X - print_str
  *@buffer: buffer
- *@formato: list
  *@total_chars: j
  *@list: l
  *Return: return
  */
 
-
-int print_X(char **buffer, char formato, int *total_chars, va_list list)
+int print_X(char **buffer, int *total_chars, va_list list)
 {
 	int i;
 	char *word;

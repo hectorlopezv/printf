@@ -4,13 +4,12 @@
 /**
  *rev_string - print_str
  *@buffer: buffer
- *@formato: list
  *@total_chars: j
  *@list: l
  *Return: return
  */
 
-int rev_string(char **buffer, char formato, int *total_chars, va_list list)
+int rev_string(char **buffer, int *total_chars, va_list list)
 {
 	int index, length;
 	char *temp_2, *p;
@@ -38,13 +37,12 @@ int rev_string(char **buffer, char formato, int *total_chars, va_list list)
 /**
  *print_pointer_void - print_str
  *@buffer: buffer
- *@formato: list
  *@total_chars: j
  *@list: l
  *Return: return
  */
 
-int print_pointer_void(char **buffer, char formato, int *total_chars,
+int print_pointer_void(char **buffer, int *total_chars,
 		va_list list)
 {
 
@@ -80,13 +78,12 @@ int print_pointer_void(char **buffer, char formato, int *total_chars,
 /**
  *print_str - print_str
  *@buffer: buffer
- *@formato: list
  *@total_chars: j
  *@list: l
  *Return: return
  */
 
-int print_str(char **buffer, char formato, int *total_chars, va_list list)
+int print_str(char **buffer, int *total_chars, va_list list)
 {
 	int i;
 	char *null_case, *p;

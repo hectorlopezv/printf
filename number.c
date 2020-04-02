@@ -4,13 +4,12 @@
 /**
  *print_int - print_str
  *@buffer: buffer
- *@formato: list
  *@total_chars: j
  *@list: l
  *Return: return
  */
 
-int print_int(char **buffer, char formato, int *total_chars, va_list list)
+int print_int(char **buffer, int *total_chars, va_list list)
 {
 	int i;
 	char *p;
@@ -28,13 +27,12 @@ int print_int(char **buffer, char formato, int *total_chars, va_list list)
 /**
  *print_to_binary - print_str
  *@buffer: buffer
- *@formato: list
  *@total_chars: j
  *@list: l
  *Return: return
  */
 
-int print_to_binary(char **buffer, char formato, int *total_chars,
+int print_to_binary(char **buffer, int *total_chars,
 		va_list list)
 {
 	int i;
@@ -52,14 +50,13 @@ int print_to_binary(char **buffer, char formato, int *total_chars,
 /**
  *print_u - print_str
  *@buffer: buffer
- *@formato: list
- *@total_chars: j
+ *@total_chars: total_chars
  *@list: l
  *Return: return
  */
 
 
-int print_u(char **buffer, char formato, int *total_chars, va_list list)
+int print_u(char **buffer, int *total_chars, va_list list)
 {
 	int i;
 	char *word;
@@ -75,13 +72,12 @@ int print_u(char **buffer, char formato, int *total_chars, va_list list)
 /**
  *print_o - print_str
  *@buffer: buffer
- *@formato: list
  *@total_chars: j
  *@list: l
  *Return: return
  */
 
-int print_o(char **buffer, char formato, int *total_chars, va_list list)
+int print_o(char **buffer, int *total_chars, va_list list)
 {
 	int i;
 	char *word;

@@ -3,13 +3,12 @@
 /**
  *print_char - print_str
  *@buffer: buffer
- *@formato: list
  *@total_chars: j
  *@list: l
  *Return: return
  */
 
-int print_char(char **buffer, char formato, int *total_chars, va_list list)
+int print_char(char **buffer, int *total_chars, va_list list)
 {
 	char p;
 
@@ -25,25 +24,23 @@ int print_char(char **buffer, char formato, int *total_chars, va_list list)
 /**
  *print_S - print_str
  *@buffer: buffer
- *@formato: list
  *@total_chars: j
  *@list: l
  *Return: return
  */
 
 
-int print_S(char **buffer, char formato, int *total_chars, va_list list)
+int print_S(char **buffer, int *total_chars, va_list list)
 {
 	int i;
-	char *null_case, *p, *hex, *x_word;
+	char *null_case, *p, *hex;
 
-	i = 0, p = va_arg(list, char *), null_case = "(null)", x_word = "0";
+	i = 0, p = va_arg(list, char *), null_case = "(null)";
 	if (p == 0 || p == NULL)
 	{
 		for (i = 0; null_case[i] != '\0'; ++i)
 		{
-			_putchar(buffer, null_case[i], total_chars);
-		}
+			_putchar(buffer, null_case[i], total_chars); }
 		return (i);
 	}
 	for (i = 0; p[i] != '\0'; ++i)
@@ -54,11 +51,13 @@ int print_S(char **buffer, char formato, int *total_chars, va_list list)
 			_putchar(buffer, 'x', total_chars);
 			if (_strlen(hex) - 1  == 0)
 			{
+				_putchar(buffer, '0', total_chars);
 				if (hex[0] >= 97 && hex[0] <= 102)
 				{	hex[0] = hex[0] - 32; }
 				_putchar(buffer, hex[0], total_chars); }
 			else if (_strlen(hex) - 1 == 1)
 			{
+
 				if (hex[0] >= 97 && hex[0] <= 102)
 				{
 					hex[0] = hex[0] - 32; }
@@ -78,14 +77,13 @@ int print_S(char **buffer, char formato, int *total_chars, va_list list)
 /**
  *print_percentage_literal - print_str
  *@buffer: buffer
- *@formato: list
  *@total_chars: j
  *@list: l
  *Return: return
  */
 
-int print_percentage_literal(char **buffer, char formato,
-		int *total_chars, va_list list)
+int print_percentage_literal(char **buffer, int *total_chars,
+		va_list __attribute__((__unused__))list)
 {
 	char p;
 
@@ -97,14 +95,13 @@ int print_percentage_literal(char **buffer, char formato,
 /**
  *print_rot13 - print_str
  *@buffer: buffer
- *@formato: list
  *@total_chars: j
  *@list: l
  *Return: return
  */
 
 
-int print_rot13(char **buffer, char formato, int *total_chars, va_list list)
+int print_rot13(char **buffer, int *total_chars, va_list list)
 {
 	int a, b, i, j;
 	char *p;

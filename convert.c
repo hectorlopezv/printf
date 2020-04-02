@@ -73,7 +73,7 @@ int _putchar(char **buffer, char formato, int *total_chars)
 int handle_format(char **buffer, char formato, int *total_chars, va_list list)
 {
 	int i;
-	int (*get)(char **, char, int *, va_list list);
+	int (*get)(char **, int *, va_list list);
 
 	i = 0;
 
@@ -84,7 +84,7 @@ int handle_format(char **buffer, char formato, int *total_chars, va_list list)
 	}
 	else
 	{
-		i += get(buffer, formato, total_chars, list);
+		i += get(buffer, total_chars, list);
 	}
 	return (i);
 }
