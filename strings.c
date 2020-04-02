@@ -16,14 +16,14 @@
 int print_str(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *ocurrencias, int *j_temp)
 {
 	int i;
-	char *null_case;
-	char *p = (char *) va_arg(list, char *);
+	char *null_case, *p;
 
+	p = (char *) va_arg(list, char *);
 	i = 0;
 
 	null_case = "(null)";
 
-	if (p == 0 || p == NULL)
+	if (p == NULL)
 	{
 		for (i = 0; null_case[i] != '\0'; ++i, (*j)++)
 		{

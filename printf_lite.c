@@ -26,8 +26,15 @@ int _printf(const char *format, ...)
 		{
 			if (j < 4)
 			{
-				buffer[j] = format[i];
-				l++;
+				if (format[i] == '\n')
+				{
+					buffer[j] = '\n';
+					l++;
+				}else
+				{
+					buffer[j] = format[i];
+					l++;
+				}
 			}
 			else
 			{
@@ -54,8 +61,8 @@ int _printf(const char *format, ...)
 		i++;
 		j++;
 	}
-	va_end(arg);
 	write(1, buffer, l);
+	va_end(arg);
 	free(buffer);
 	return ((i - ocurrencias) + j_temp_2);
 }
