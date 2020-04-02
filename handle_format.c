@@ -25,45 +25,22 @@ int handle_format(int largo_format, va_list arg, const char *format, char **buff
 	{
 		if (format[largo_format] == 10)
 		{
-			if (*j < 4)
-			{
-				(*buffer)[*j] = format[i - 1];
-				(*l)++;
-				(*j)++;
-				if (*j < 4)
-				{
-					(*buffer)[*j] = format[i];
-					(*l)++;
-				}
-				else
-				{
-					check_buffer(format, buffer, i, l, j, j_temp_2, ocurrencias);
-				}
-			}
-			else
-			{
-				write(1, *buffer, *j);
-				free(*buffer);
-				*buffer = create_buffer(4);
-				*j = 0;
-				*l = 0;
-				(*buffer)[*j] = format[i - 1];
-				(*l)++;
-				(*buffer)[*j] = format[i];
-				(*l)++;
-			}
+        printing_char_1(buffer, format[i - 1], j, l, j_temp_2, ocurrencias, j_temp);
+
+        printing_char_1(buffer, format[i], j, l, j_temp_2, ocurrencias, j_temp);
 		}
 		else if ((i == 1 && format[i] == 0))
 		{
-			free(*buffer);
+			
 			va_end(arg);
+      free(*buffer);
 			return (-1);
 		}
 		else if (format[largo_format] != 10)
 		{
 			write(1, *buffer, (i - *ocurrencias) + (*j_temp_2));
-			free(*buffer);
 			va_end(arg);
+      free(*buffer);
 			return (-1);
 		}
 	}

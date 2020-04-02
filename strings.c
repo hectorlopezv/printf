@@ -42,7 +42,7 @@ int print_str(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *o
 	}
 
 	/* no null case*/
-	for (i = 0; p[i] != '\0'; ++i, (*j)++)
+	for (i = 0; p[i]; i++, (*j)++)
 	{
 		if (*j < 4)
 		{
@@ -221,18 +221,20 @@ int print_rot13(char **buffer, va_list list, int  *j, int *l, int *j_temp_2, int
 				check_buffer(null_case, buffer, i, l, j, j_temp_2, ocurrencias);
 			}
 		}
+    return(i - 1);
 	}
-	length = _strlen(p);
-	p1 = create_buffer(length + 1);
+	length = _strlen(p + 1);
+	p1 = create_buffer(length);
 
 	/* fill the string*/
 	for (i = 0; p[i] != 0; i++)
 	{
 		p1[i]  = p[i];
 	}
-	for (a = 0; p1[a] != 0; a++)
+
+	for (a = 0; p1[a] != '\0'; a++)
 	{
-		for (b = 0; test[b] != 0; b++)
+		for (b = 0; test[b] != '\0'; b++)
 		{
 			if (p1[a] == test[b])
 			{
@@ -242,7 +244,7 @@ int print_rot13(char **buffer, va_list list, int  *j, int *l, int *j_temp_2, int
 		}
 	}
 
-	for (i = 0; p1[i] != '\0'; ++i, (*j)++)
+	for (i = 0; p1[i] != '\0'; i++, (*j)++)
 	{
 		if (*j < 4)
 		{

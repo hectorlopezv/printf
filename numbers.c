@@ -17,21 +17,13 @@ int print_int(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *o
 	int i;
 	char *p;
 
-	p =  convert(va_arg(list, int), 10);
+	p = convert(va_arg(list, int), 10);
 
-	for (i = 0; p[i] != '\0'; ++i, (*j)++)
+	for (i = 0; p[i] ; i++, (*j)++)
 	{
-		if (*j < 4)
-		{
-			(*buffer)[*j]  = p[i];
-			(*l)++;
-		}
-		else
-		{
-			check_buffer(p, buffer, i, l, j, j_temp_2, ocurrencias);
-		}
-
+      printing_char_1(buffer, p[i], j, l, j_temp_2, ocurrencias, j_temp);
 	}
+
 	return (i - 1);
 }
 
@@ -56,21 +48,10 @@ int print_u(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *ocu
 	/* no null case*/
 	for (i = 0; word[i] != '\0'; ++i, (*j)++)
 	{
-		if (*j < 4)
-		{
-			(*buffer)[*j]  = word[i];
-			(*l)++;
-		}
-		else
-		{
-			check_buffer(word, buffer, i, l, j, j_temp_2, ocurrencias);
-		}
 
+      printing_char_1(buffer, word[i], j, l, j_temp_2, ocurrencias, j_temp);
 	}
-	if (word[0] == '0' && _strlen(word) == 0)
-	{
-		return (1);
-	}
+
 	return (i - 1);
 
 }
@@ -98,15 +79,7 @@ int print_o(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *ocu
 	/* no null case*/
 	for (i = 0; word[i] != '\0'; ++i, (*j)++)
 	{
-		if (*j < 4)
-		{
-			(*buffer)[*j]  = word[i];
-			(*l)++;
-		}
-		else
-		{
-			check_buffer(word, buffer, i, l, j, j_temp_2, ocurrencias);
-		}
+      printing_char_1(buffer, word[i], j, l, j_temp_2, ocurrencias, j_temp);
 	}
 	return (i - 1);
 }
@@ -134,15 +107,7 @@ int print_x(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *ocu
 	/* no null case*/
 	for (i = 0; word[i] != '\0'; ++i, (*j)++)
 	{
-		if (*j < 4)
-		{
-			(*buffer)[*j]  = word[i];
-			(*l)++;
-		}
-		else
-		{
-			check_buffer(word, buffer, i, l, j, j_temp_2, ocurrencias);
-		}
+      printing_char_1(buffer, word[i], j, l, j_temp_2, ocurrencias, j_temp);
 	}
 	if (_strlen(word) == 0)
 	{
@@ -174,38 +139,15 @@ int print_X(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *ocu
 	/* no null case*/
 	for (i = 0; word[i] != '\0'; ++i, (*j)++)
 	{
-		if (*j < 4)
-		{
+	
 			if (word[i] > 96 && word[i] < 123)
 			{
-				(*buffer)[*j]  = word[i] - 32;
-				(*l)++;
+        printing_char_1(buffer, word[i] -32, j, l, j_temp_2, ocurrencias, j_temp);
 			}
 			else
 			{
-				(*buffer)[*j]  = word[i];
-				(*l)++;
+        printing_char_1(buffer, word[i], j, l, j_temp_2, ocurrencias, j_temp);
 			}
-
-		}
-		else
-		{
-			write(1, *buffer, *j);
-			free(*buffer);
-			*buffer = create_buffer(4);
-			*j = 0;
-			*l = 0;
-			if (word[i] > 96 && word[i] < 123)
-			{
-				(*buffer)[*j]  = word[i] - 32;
-				(*l)++;
-			}
-			else
-			{
-				(*buffer)[*j]  = word[i];
-				(*l)++;
-			}
-		}
 
 	}
 

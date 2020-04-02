@@ -25,6 +25,8 @@ int _printf(const char *format, ...);
 
 char *convert(long int num, int base);
 
+int printing_char_1(char **buffer, char word, int *j, int *l, int *j_temp_2, int *ocurrencias, int *j_temp);
+
 char *create_buffer(int size);
 
 int _strlen(const char *s);

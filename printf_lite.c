@@ -17,53 +17,46 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 	buffer = create_buffer(4);
-	if (format == NULL || buffer == NULL)
-		return (-1);
+	if (format == NULL)
+  {
+    free(buffer);
+    return (-1);
+
+  } 
+  if (buffer == NULL)
+  {
+    return (-1);
+
+  }
 	largo_format = _strlen(format);
 	while (format[i] && format)
 	{
 		if (format[i] != '%')
 		{
-			if (j < 4)
-			{
-				if (format[i] == '\n')
-				{
-					buffer[j] = '\n';
-					l++;
-				}else
-				{
-					buffer[j] = format[i];
-					l++;
-				}
-			}
-			else
-			{
-				check_buffer(format, &buffer, i, &l, &j, &j_temp_2, &ocurrencias);
-			}
+      printing_char_1(&buffer, format[i], &j, &l, &j_temp_2,&ocurrencias, &j_temp);
+
 		}
 		else
 		{
 			i++;
-			if (j < 4)
-			{
-				format_fail = handle_format(largo_format, arg, format, &buffer, i, &l,  &j, &j_temp_2, &ocurrencias, &j_temp);
+      format_fail = handle_format(largo_format, arg, format, &buffer, i, &l,  &j, &j_temp_2, &ocurrencias, &j_temp);
 				if (format_fail == -1)
 					return (-1);
-			}
-			else
-			{
-				check_buffer(format, &buffer, i, &l,  &j, &j_temp_2, &ocurrencias);
-				format_fail = handle_format(largo_format, arg, format, &buffer, i, &l, &j, &j_temp_2, &ocurrencias, &j_temp);
-				if (format_fail == -1)
-					return (-1);
-			}
 		}
+
 		i++;
 		j++;
+    
 	}
-	write(1, buffer, l);
-	va_end(arg);
-	free(buffer);
+
+  if (l > 0)
+    write(1, buffer, l);
+
+
+
+free(buffer);
+va_end(arg);
+	
 	return ((i - ocurrencias) + j_temp_2);
 }
 
