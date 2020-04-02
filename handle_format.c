@@ -25,9 +25,7 @@ int handle_format(int largo_format, va_list arg, const char *format, char **buff
 	{
 		if (format[largo_format] == 10)
 		{
-        printing_char_1(buffer, format[i - 1], j, l, j_temp_2, ocurrencias, j_temp);
-
-        printing_char_1(buffer, format[i], j, l, j_temp_2, ocurrencias, j_temp);
+      printing_char_1(buffer, format[i - 1], j, l);printing_char_1(buffer, format[i], j, l);
 		}
 		else if ((i == 1 && format[i] == 0))
 		{

@@ -79,16 +79,4 @@ char *create_buffer(int size)
 	return (buffer);
 }
 
-/**
- *check_buffer - check_buffer
- *@format: format
- *@buffer: buffer
- *@i: i
- *@l: l
- *@j: j
- *@j_temp_2: j_temp_2
- *@ocurrencias: ocurrencias
- *Return: return
- */
-
 

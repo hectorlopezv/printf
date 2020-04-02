@@ -27,7 +27,7 @@ int print_str(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *o
 	{
 		for (i = 0; null_case[i] != '\0'; ++i, (*j)++)
 		{
-      printing_char_1(buffer, null_case[i], j, l, j_temp_2, ocurrencias, j_temp);
+      printing_char_1(buffer, null_case[i], j, l);
 		}
 
 		return (i - 1);
@@ -36,7 +36,7 @@ int print_str(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *o
 	/* no null case*/
 	for (i = 0; p[i]; i++, (*j)++)
 	{
-      printing_char_1(buffer, p[i], j, l, j_temp_2, ocurrencias, j_temp);
+      printing_char_1(buffer, p[i], j, l);
 
 	}
 	return (i - 1);
@@ -56,7 +56,11 @@ int print_str(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *o
  *Return: return
  */
 
-gi
+int print_S(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *ocurrencias, int *j_temp)
+{
+	
+	return (1);
+}
 
 
 /**
@@ -86,7 +90,7 @@ int print_rot13(char **buffer, va_list list, int  *j, int *l, int *j_temp_2, int
 		null_case = "(null)";
 		for (i = 0; null_case[i] != '\0'; ++i, (*j)++)
 		{
-            printing_char_1(buffer, null_case[i], j, l, j_temp_2, ocurrencias, j_temp);
+      printing_char_1(buffer, null_case[i], j, l);
 		}
     return(i - 1);
 	}
@@ -114,7 +118,7 @@ int print_rot13(char **buffer, va_list list, int  *j, int *l, int *j_temp_2, int
 
 	for (i = 0; p1[i] != '\0'; i++, (*j)++)
 	{
-      printing_char_1(buffer, p[i], j, l, j_temp_2, ocurrencias, j_temp);
+      printing_char_1(buffer, p[i], j, l);
 	}
 
 	free(p1);
@@ -151,7 +155,7 @@ int rev_string(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *
 	{
 		for (index = 0; temp_2[index] != '\0'; index++, (*j)++)
 		{
-      printing_char_1(buffer, temp_2[index], j, l, j_temp_2, ocurrencias, j_temp);
+      printing_char_1(buffer, temp_2[index], j, l);
 		}
 		return (index - 1);
 	}
@@ -160,7 +164,7 @@ int rev_string(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *
 
 	for (index = length; index >= 0; --index, (*j)++)
 	{
-      printing_char_1(buffer, word[i], j, l, j_temp_2, ocurrencias, j_temp);
+      printing_char_1(buffer, p[index], j, l);
 	}
 	return (length + 1);
 }
@@ -187,8 +191,7 @@ void  write_0x(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *
 	word = "\\x";
 	for (i = 0; word[i] != '\0'; ++i, (*j)++)
 	{
-      printing_char_1(buffer, word[i], j, l, j_temp_2, ocurrencias, j_temp);
-	}
-
+      printing_char_1(buffer, word[i], j, l);
+  }
 }
 

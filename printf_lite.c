@@ -33,13 +33,13 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-      printing_char_1(&buffer, format[i], &j, &l, &j_temp_2,&ocurrencias, &j_temp);
+      printing_char_1(&buffer, format[i], &j, &l);
 
 		}
 		else
 		{
 			i++;
-      format_fail = handle_format(largo_format, arg, format, &buffer, i, &l,  &j, &j_temp_2, &ocurrencias, &j_temp);
+      format_fail = handle_format(largo_format, arg, format, &buffer, i, &l, &j, &j_temp_2, &ocurrencias, &j_temp);
 				if (format_fail == -1)
 					return (-1);
 		}

@@ -19,7 +19,7 @@ int print_percentage_literal(char **buffer, va_list list, int *j, int *l, int *j
 
 	p = '%';
 
-  printing_char_1(buffer, p, j, l, j_temp_2, ocurrencias, j_temp);
+  printing_char_1(buffer, p, j, l);
 
 	return (0);
 }
@@ -49,7 +49,7 @@ int _strlen(const char *s)
 }
 
 
-int printing_char_1(char **buffer, char word, int *j, int *l, int *j_temp_2, int *ocurrencias, int *j_temp)
+int printing_char_1(char **buffer, char word, int *j, int *l)
 {
 	int i;
 	char *null_case;
@@ -101,7 +101,7 @@ int printing_char(char **buffer, char *word, int *j, int *l, int *j_temp_2, int 
 	{
 		for (i = 0; null_case[i] != '\0'; ++i, (*j)++)
 		{
-        printing_char_1(buffer, null[i], j, l, j_temp_2, ocurrencias, j_temp);
+        printing_char_1(buffer, null_case[i], j, l);
 		}
 
 		return (i - 1);
@@ -109,9 +109,8 @@ int printing_char(char **buffer, char *word, int *j, int *l, int *j_temp_2, int 
 
 	for (i = 0; p[i] != '\0'; i++, (*j)++)
 	{
-      printing_char_1(buffer, p[i], j, l, j_temp_2, ocurrencias, j_temp);
+      printing_char_1(buffer, p[i], j, l);
 	}
-  
 	return (i - 1);
 }
 
@@ -133,7 +132,7 @@ int print_char(char **buffer, va_list list, int *j, int *l, int *j_temp_2, int *
 	char p;
 
 	p = (char) va_arg(list, int);
-  printing_char_1(buffer, p, j, l, j_temp_2, ocurrencias, j_temp);
+  printing_char_1(buffer, p, j, l);
 
 	return (0);
 
@@ -165,19 +164,19 @@ int print_pointer_void(char **buffer, va_list list, int *j, int *l, int *j_temp_
 	{
 		for (i = 0; null_case[i] != '\0'; ++i, (*j)++)
 		{
-        printing_char_1(buffer, null_case[i], j, l, j_temp_2, ocurrencias, j_temp);
-		}
+      printing_char_1(buffer, null_case[i], j, l);
+    }
 		return (i - 1);
 	}
 
   for (i = 0; p[i] != '\0'; ++i, (*j)++)
 	{
-      printing_char_1(buffer, p[i], j, l, j_temp_2, ocurrencias, j_temp);
+      printing_char_1(buffer, p[i], j, l);
 	}
 
 	for (i = 0; word[i] != '\0'; ++i, (*j)++)
 	{
-      printing_char_1(buffer, word[i], j, l, j_temp_2, ocurrencias, j_temp);
+      printing_char_1(buffer, word[i], j, l);
 	}
 
 	return (i - 1 + 2);

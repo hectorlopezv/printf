@@ -20,7 +20,7 @@ int print_to_binary(char **buffer, va_list list, int *j, int *l, int *j_temp_2, 
 	p =  convert(va_arg(list, int), 10);
 	for (i = 0; p[i] != '\0'; ++i, (*j)++)
 	{
-        printing_char_1(buffer, p[i], j, l, j_temp_2, ocurrencias, j_temp);
+        printing_char_1(buffer, p[i], j, l);
 	}
 	return (i - 1);
 }
