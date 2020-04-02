@@ -7,6 +7,14 @@
 #include <unistd.h>
 #include <limits.h>
 
+
+/**
+  *struct formats - Struct formats
+  *
+  *@c: the format
+  * @f: The function associated
+  */
+
 typedef struct formats
 {
 		char c;
@@ -23,7 +31,7 @@ int _putchar(char **, char, int *);
 
 int print_char(char **, char, int *, va_list);
 
-int _printf(char * format, ...);
+int _printf(char *format, ...);
 
 int print_S(char **, char, int *, va_list);
 

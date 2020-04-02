@@ -1,33 +1,51 @@
 #include "holberton.h"
 
-int rev_string(char **buffer, char formato, int * total_chars, va_list list)
+
+/**
+ *rev_string - print_str
+ *@buffer: buffer
+ *@formato: list
+ *@total_chars: j
+ *@list: l
+ *Return: return
+ */
+
+int rev_string(char **buffer, char formato, int *total_chars, va_list list)
 {
-  int index, length;
+	int index, length;
 	char *temp_2, *p;
 
 	temp_2 = "(null)";
 	p = (char *) va_arg(list, char *);
 
-	length = strlen(p) - 1;
+	length = _strlen(p) - 1;
 
 	if (p == NULL)
 	{
 		for (index = 0; temp_2[index] != '\0'; index++)
 		{
-      _putchar(buffer, temp_2[index], total_chars);
+			_putchar(buffer, temp_2[index], total_chars);
 		}
 		return (index);
 	}
 	for (index = length; index >= 0; --index)
 	{
-    _putchar(buffer, p[index], total_chars);
+		_putchar(buffer, p[index], total_chars);
 	}
-
 	return (length + 1);
 }
 
+/**
+ *print_pointer_void - print_str
+ *@buffer: buffer
+ *@formato: list
+ *@total_chars: j
+ *@list: l
+ *Return: return
+ */
 
-int print_pointer_void(char **buffer, char formato, int * total_chars, va_list list)
+int print_pointer_void(char **buffer, char formato, int *total_chars,
+		va_list list)
 {
 
 	int i, j;
@@ -35,39 +53,40 @@ int print_pointer_void(char **buffer, char formato, int * total_chars, va_list l
 	char p[3];
 
 	p[0] = '0', p[1] = 'x', p[2] = '\0';
-	word = convert(va_arg(list,  long int), 16);
+
+	word = convert(va_arg(list, long int), 16);
 	null_case = "(nil)";
 
 	if (word[0] == '0')
 	{
 		for (i = 0; null_case[i] != '\0'; ++i)
 		{
-      _putchar(buffer, null_case[i], total_chars);
-    }
+			_putchar(buffer, null_case[i], total_chars);
+		}
 		return (i);
 	}
-  for (j = 0; p[j] != '\0'; ++j)
+	for (j = 0; p[j] != '\0'; ++j)
 	{
-      _putchar(buffer, p[j], total_chars);
+		_putchar(buffer, p[j], total_chars);
 	}
 
 	for (i = 0; word[i] != '\0'; ++i)
 	{
-      _putchar(buffer, word[i], total_chars);
+		_putchar(buffer, word[i], total_chars);
 	}
-
 	return (i + j);
 }
 
+/**
+ *print_str - print_str
+ *@buffer: buffer
+ *@formato: list
+ *@total_chars: j
+ *@list: l
+ *Return: return
+ */
 
-
-
-
-
-
-
-
-int print_str(char **buffer, char formato, int * total_chars, va_list list)
+int print_str(char **buffer, char formato, int *total_chars, va_list list)
 {
 	int i;
 	char *null_case, *p;
@@ -81,15 +100,14 @@ int print_str(char **buffer, char formato, int * total_chars, va_list list)
 	{
 		for (i = 0; null_case[i] != '\0'; ++i)
 		{
-      _putchar(buffer, null_case[i], total_chars);
+			_putchar(buffer, null_case[i], total_chars);
 		}
-
 		return (i);
 	}
 	for (i = 0; p[i]; i++)
 	{
-    _putchar(buffer, p[i], total_chars);
-
+		_putchar(buffer, p[i], total_chars);
 	}
 	return (i);
 }
+

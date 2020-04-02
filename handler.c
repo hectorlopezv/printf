@@ -9,7 +9,7 @@
 int (*get_format(char format))(char **, char, int *, va_list)
 {
 	int i;
-  
+
 	i = 0;
 
 	formats_t formato[] = {

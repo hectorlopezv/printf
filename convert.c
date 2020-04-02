@@ -1,5 +1,12 @@
 #include "holberton.h"
 
+/**
+ *convert - print_str
+ *@num: buffer
+ *@base: base
+ *Return: return
+ */
+
 char *convert(long int num, int base)
 {
 	static char *array;
@@ -27,58 +34,66 @@ char *convert(long int num, int base)
 }
 
 
+/**
+ *_putchar - print_str
+ *@buffer: buffer
+ *@formato: list
+ *@total_chars: j
+ *Return: return
+ */
 
-
-int _putchar(char **buffer, char formato, int * total_chars)
+int _putchar(char **buffer, char formato, int *total_chars)
 {
-  (*total_chars)++;
-
-  if (*total_chars < 1024)
-  {
-    (*buffer)[*total_chars] = formato;
-
-  }else
-  {
-    
-    write(1,*buffer,*total_chars);
-    free(*buffer);
-    *buffer = malloc(1024);
-    *total_chars = 0;
-    (*buffer)[*total_chars] = formato;
-
-
-  }
-  return (1);
-  
-}
-
-int handle_format(char **buffer, char formato, int * total_chars, va_list list)
-{
-  int i;
-  int (*get)(char **, char, int *,va_list list);
-  
-  i = 0;
- 
-
-  get = get_format(formato);
-  
-  if (get == NULL)
+	(*total_chars)++;
+	if (*total_chars < 1024)
 	{
-    
-    return(-1);
+		(*buffer)[*total_chars] = formato;
 	}
-  else
-  {
-    i += get(buffer,formato,total_chars,list);
-  }
-
-
-
-  return (i);
-
-
+	else
+	{
+		write(1, *buffer, *total_chars);
+		free(*buffer);
+		*buffer = malloc(1024);
+		*total_chars = 0;
+		(*buffer)[*total_chars] = formato;
+	}
+	return (1);
 }
 
+
+/**
+ *handle_format - print_str
+ *@buffer: buffer
+ *@formato: list
+ *@total_chars: j
+ *@list: l
+ *Return: return
+ */
+
+int handle_format(char **buffer, char formato, int *total_chars, va_list list)
+{
+	int i;
+	int (*get)(char **, char, int *, va_list list);
+
+	i = 0;
+
+	get = get_format(formato);
+	if (get == NULL)
+	{
+		return (-1);
+	}
+	else
+	{
+		i += get(buffer, formato, total_chars, list);
+	}
+	return (i);
+}
+
+/**
+ *_strlen - print_str
+ *@s: buffer
+ *Return: return
+ */
 
 int _strlen(const char *s)
 {
@@ -87,12 +102,12 @@ int _strlen(const char *s)
 
 	i = 0;
 	counter = 0;
-
 	while (s[i] != '\0')
 	{
 		counter++;
 		i++;
 	}
-	
+
 	return (counter);
 }
+
