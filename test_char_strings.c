@@ -149,7 +149,7 @@ int main(void)
 
 */
 
-
+/*
 	printf("START OF TEST\n");
 	printf("=====================\n");
 	printf("printf(NULL)  : %d\n", printf(str));
@@ -202,7 +202,8 @@ int main(void)
 	alen = _printf("Actual  : %c%%%c%%%%%s%c%s%s\n", INT_MAX, INT_MIN, "hello", 0, "holberton", 0);
 	printf("Expected: %d\n", elen);
 	printf("Actual  : %d\n", alen);
-
+*/
+/*
 	printf("%b", 1024);
 	putchar('\n');
 	_printf("%b\n", 1024);
@@ -222,7 +223,7 @@ int main(void)
 
 	pelen = _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "xabj");
 	printf("%d\n",pelen);
-
+*/
 
 	pelen = _printf("%p", (void *)0x7fff5100b608);
 	putchar('\n');
