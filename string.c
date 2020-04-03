@@ -1,8 +1,8 @@
-#include "libs.h"
+#include "holberton.h"
 
 
 
-int print_char(char **buffer,char formato,int * total_chars,va_list list)
+int print_char(char **buffer, char formato, int * total_chars, va_list list)
 {
   char p;
 
@@ -17,13 +17,66 @@ int print_char(char **buffer,char formato,int * total_chars,va_list list)
 
 
 
-int print_S(char **buffer,char formato,int * total_chars,va_list list)
+int print_S(char **buffer, char formato, int * total_chars, va_list list)
 {
-  return(0);
+  int i;
+	char *null_case, *p, *hex, *x_word;
+
+	i = 0;
+	p = va_arg(list, char *);
+	null_case = "(null)";
+	x_word = "0";
+	if (p == 0 || p == NULL)
+	{
+		for (i = 0; null_case[i] != '\0'; ++i)
+		{
+      _putchar(buffer, null_case[i], total_chars);
+		}
+
+		return (i);
+	}
+	
+	for (i = 0; p[i] != '\0'; ++i)
+	{
+			if ((p[i] > 0 && p[i] < 32) || p[i] >= 127)
+			{
+				hex = convert(p[i], 16);
+        _putchar(buffer, '\\', total_chars);
+        _putchar(buffer, 'x', total_chars);
+				if (strlen(hex) - 1  == 0)
+				{
+					if (hex[0] >= 97 && hex[0] <= 102)
+					{
+						hex[0] = hex[0] - 32;
+					}
+          _putchar(buffer, hex[0], total_chars);
+				}
+
+				else if (strlen(hex) - 1 == 1)
+				{
+					if (hex[0] >= 97 && hex[0] <= 102)
+					{
+						hex[0] = hex[0] - 32;
+					}
+					if (hex[1] >= 97 && hex[1] <= 102)
+					{
+						hex[1] = hex[1] - 32;
+					}
+          _putchar(buffer, hex[0], total_chars);
+          _putchar(buffer, hex[1], total_chars);
+				}
+
+			}
+			else
+			{
+        _putchar(buffer, p[i], total_chars);
+			}
+	}
+	return (i);
 }
 
 
-int print_percentage_literal(char **buffer,char formato,int * total_chars,va_list list)
+int print_percentage_literal(char **buffer, char formato, int * total_chars, va_list list)
 {
 	char p;
 
@@ -36,10 +89,10 @@ int print_percentage_literal(char **buffer,char formato,int * total_chars,va_lis
 
 
 
-int print_rot13(char **buffer,char formato,int * total_chars,va_list list)
+int print_rot13(char **buffer, char formato, int * total_chars, va_list list)
 {
   int a, b, i, length,j;
-	char *p, *p1;
+	char *p;
 	char *null_case;
   char string[100];
 
@@ -58,18 +111,17 @@ int print_rot13(char **buffer,char formato,int * total_chars,va_list list)
 		}
     return(i);
 	}
-	/* fill the string*/
 	for (i = 0; p[i] != '\0'; i++)
 	{
 		string[i]  = p[i];
 	}
-  string[i]  = p[i];
+  string[i]  = '\0';
 
-	for (a = 0; p1[a] != '\0'; a++)
+	for (a = 0; string[a] != '\0'; a++)
 	{
 		for (b = 0; test[b] != '\0'; b++)
 		{
-			if (p1[a] == test[b])
+			if (string[a] == test[b])
 			{
 				string[a] = res[b];
 				break;
@@ -82,91 +134,6 @@ int print_rot13(char **buffer,char formato,int * total_chars,va_list list)
      _putchar(buffer, string[j], total_chars);
 
 	}
-
 	return (j);
 
-}
-
-int rev_string(char **buffer,char formato,int * total_chars,va_list list)
-{
-  int index, length;
-	char *temp_2, *p;
-
-	temp_2 = "(null)";
-	p = (char *) va_arg(list, char *);
-
-	length = strlen(p) - 1;
-
-	if (p == NULL)
-	{
-		for (index = 0; temp_2[index] != '\0'; index++)
-		{
-      _putchar(buffer, temp_2[index], total_chars);
-		}
-		return (index);
-	}
-
-	/* imprimir de final atras*/
-
-	for (index = length; index >= 0; --index)
-	{
-    _putchar(buffer, p[index], total_chars);
-	}
-
-	return (length + 1);
-}
-
-
-int print_pointer_void(char **buffer,char formato,int * total_chars,va_list list)
-{
-  return(0);
-}
-
-int print_u(char **buffer,char formato,int * total_chars,va_list list)
-{
-  return(0);
-}
-
-int print_o(char **buffer,char formato,int * total_chars,va_list list)
-{
-  return(0);
-}
-
-int print_x(char **buffer,char formato,int * total_chars,va_list list)
-{
-  return(0);
-}
-
-int print_X(char **buffer,char formato,int * total_chars,va_list list)
-{
-  return(0);
-}
-
-int print_str(char **buffer,char formato,int * total_chars,va_list list)
-{
-	int i;
-	char *null_case, *p;
-
-	p = (char *) va_arg(list, char *);
-	i = 0;
-
-	null_case = "(null)";
-
-	if (p == NULL)
-	{
-		for (i = 0; null_case[i] != '\0'; ++i)
-		{
-      _putchar(buffer, null_case[i], total_chars);
-		}
-
-		return (i);
-	}
-
-	/* no null case*/
-	for (i = 0; p[i]; i++)
-	{
-       _putchar(buffer, p[i], total_chars);
-
-	}
-	return (i);
 }

@@ -1,4 +1,4 @@
-#include "libs.h"
+#include "holberton.h"
 
 char *convert(long int num, int base)
 {
@@ -29,11 +29,11 @@ char *convert(long int num, int base)
 
 
 
-int _putchar(char **buffer,char formato,int * total_chars)
+int _putchar(char **buffer, char formato, int * total_chars)
 {
   (*total_chars)++;
 
-  if (*total_chars < 4)
+  if (*total_chars < 1024)
   {
     (*buffer)[*total_chars] = formato;
 
@@ -42,7 +42,7 @@ int _putchar(char **buffer,char formato,int * total_chars)
     
     write(1,*buffer,*total_chars);
     free(*buffer);
-    *buffer = malloc(4);
+    *buffer = malloc(1024);
     *total_chars = 0;
     (*buffer)[*total_chars] = formato;
 
@@ -52,7 +52,7 @@ int _putchar(char **buffer,char formato,int * total_chars)
   
 }
 
-int handle_format(char **buffer,char formato,int * total_chars,va_list list)
+int handle_format(char **buffer, char formato, int * total_chars, va_list list)
 {
   int i;
   int (*get)(char **, char, int *,va_list list);
@@ -77,4 +77,22 @@ int handle_format(char **buffer,char formato,int * total_chars,va_list list)
   return (i);
 
 
+}
+
+
+int _strlen(const char *s)
+{
+	int counter;
+	int i;
+
+	i = 0;
+	counter = 0;
+
+	while (s[i] != '\0')
+	{
+		counter++;
+		i++;
+	}
+	
+	return (counter);
 }

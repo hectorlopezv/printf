@@ -1,4 +1,4 @@
-#include "libs.h"
+#include "holberton.h"
 #include <string.h>
 
 
@@ -8,7 +8,6 @@ int _printf(char * format, ...)
 {
   int i, total_chars, p, p2,temp;
   char *buffer;
-  
 
   va_list arg;
   va_start(arg, format);
@@ -19,7 +18,7 @@ int _printf(char * format, ...)
   if (format == NULL)
     return (-1);
 
-  buffer = malloc(4);
+  buffer = malloc(1024);
   if ( buffer == NULL)
     return (-1);
 
@@ -32,7 +31,7 @@ int _printf(char * format, ...)
     else 
     {
       i++;
-      temp = handle_format(&buffer,format[i],&total_chars,arg);
+      temp = handle_format(&buffer, format[i],&total_chars, arg);
       if (temp == -1)
       {
         if(format[strlen(format)-1] == 10)
@@ -42,7 +41,7 @@ int _printf(char * format, ...)
         }
         else
         {
-           p2 = 0,p = -1;
+           p2 = 0, p = -1;
            break; 
         }
       }
@@ -50,32 +49,15 @@ int _printf(char * format, ...)
       {
       p2 += temp;
       }
-      
-      /*handle format*/
-
     }
-
-    
     i++;
-    
-
   }
- 
-  //if (total_chars)
+
   write (1, buffer, total_chars + 1);
   free(buffer);
   va_end(arg);
-   //printf("p %d\n",p);
-  //printf("p2 %d\n",p2);
-  return ( p + p2);
+  return (p + p2);
 
 
   }
-
-
-
-
-
-
-
-
+  

@@ -1,4 +1,4 @@
-#include "libs.h"
+#include "holberton.h"
 
 /**
  * get_format - function that return the text format
@@ -6,9 +6,11 @@
  * Return: return format, return null if error
  */
 
-int (*get_format(char format))(char **buffer,char formato,int * total_chars,va_list list)
+int (*get_format(char format))(char **, char, int *, va_list)
 {
 	int i;
+  
+	i = 0;
 
 	formats_t formato[] = {
 		{'d', print_int},
@@ -29,7 +31,6 @@ int (*get_format(char format))(char **buffer,char formato,int * total_chars,va_l
 	};
 
 
-	i = 0;
 
 
 	while (i < 15)
