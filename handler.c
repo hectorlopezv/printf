@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "libs.h"
 
 /**
  * get_format - function that return the text format
@@ -6,7 +6,7 @@
  * Return: return format, return null if error
  */
 
-int (*get_format(char format))(char **buffer, va_list list, int  *j, int *l, int *j_temp_2, int *ocurrencias, int *j_temp)
+int (*get_format(char format))(char **buffer,char formato,int * total_chars,va_list list)
 {
 	int i;
 

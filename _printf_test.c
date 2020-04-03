@@ -1,5 +1,5 @@
-#include "holberton.h"
-#include <limits.h>
+#include "libs.h"
+
 
 
 int main(void)
@@ -13,25 +13,41 @@ int main(void)
 	/*_printf("Her mom had warned her. She had been warned time and again, but she had refused to believe her. She had done everything right and she knew she would be rewarded for doing so with the promotion. So when the promotion was given to her main rival, it not only stung, it threw her belief system into disarray. It was her first big lesson in life, but not the last.Her mom had warned her. She had been warned time and again, but she had refused to believe her. She had done everything right and she knew she would be rewarded for doing so with the promotion. So when the promotion was given to her main rival, it not only stung, it threw her belief system into disarray. It was her first big lesson in life, but not the last.Her mom had warned her. She had been warned time and again, but she had refused to believe her. She had done everything right and she knew she would be rewarded for doing so with the promotion. So when the promotion was given to her main rival, it not only stung, it threw her belief system into disarray. It was her first big lesson in life, but not the last.Her mom had warned her.it not only stung, it threw her belief system into disarray. It was her first big lesson in life, bl");
 	 *     */
 
-   /*
-	_printf("HECLX\n");
-	putchar('\n');
-	_printf("ANDRES\n");
-  
+   
+/*
+  _printf("HECLX\n");
+  _printf("%d\n",_printf("HECLX\n"));
+	_printf("\n");
+  _printf("ANDRES\n");
+	_printf("%d\n",_printf("ANDRES\n"));
+
+_printf("\n");
+
+  printf("HECLX\n");
+  printf("%d\n",printf("HECLX\n"));
+	printf("\n");
+  printf("ANDRES\n");
+	printf("%d\n",printf("ANDRES\n"));
+  */
 
 
 
 
 
 	elen = _printf("Let's print a simple sentence.\n");
-	_printf("%d\n",elen);
+  
+	
+  printf("largo %d\n",_printf("%d\n",elen));
+
+    printf("largo %d\n",printf("%d\n",elen));
 
   
-	pelen = _printf("Let's print a simple sentence.\n");
+	pelen = printf("Let's print a simple sentence.\n");
 	_printf("%d\n",pelen);
 
+
 	
-  elen = _printf("%c", 'S');
+  elen = printf("%c", 'S');
 	putchar('\n');
 
   
@@ -46,47 +62,68 @@ int main(void)
 	_printf("%d\n",elen);
 	_printf("%d\n",pelen);
 	
-  elen = _printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
+  elen = printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
 	pelen = _printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
 	_printf("%d\n",elen);
 	_printf("%d\n",pelen);
-	elen = _printf("%s", "This sentence is retrieved from va_args!\n");
+
+    elen = printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
+	pelen = printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
+	printf("%d\n",elen);
+	printf("%d\n",pelen);
+
+	elen = printf("%s", "This sentence is retrieved from va_args!\n");
 	pelen = _printf("%s", "This sentence is retrieved from va_args!\n");
 	_printf("%d\n",elen);
 	_printf("%d\n",pelen);
-	elen = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
+
+	elen = printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
 	pelen = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
 	_printf("%d\n",elen);
 	_printf("%d\n",pelen);
 
+
+
   
   
-	elen = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+	elen = printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
 	pelen = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
 	_printf("%d\n",elen);
 	_printf("%d\n",pelen);
-	elen = _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
+	
+  
+  elen = printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
 	pelen = _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
-	_printf("%d\n",elen);
+	
+  _printf("%d\n",elen);
 	_printf("%d\n",pelen);
-	elen = _printf("%%");
+
+
+	
+  elen = printf("%%");
 	putchar('\n');
 	pelen = _printf("%%");
 	putchar('\n');
-	_printf("%d\n",elen);
+	printf("%d\n",elen);
 	_printf("%d\n",pelen);
-	_printf("Should print a single percent sign: %%\n");
-	_printf("Should print a single percent sign: %%\n");
+	
+  _printf("Should print a single percent sign: %%\n");
+	printf("Should print a single percent sign: %%\n");
+	printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
 	_printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
-	_printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
-	_printf("css%ccs%scscscs", 'T', "Test");
+	printf("css%ccs%scscscs", 'T', "Test");
 	putchar('\n');
-	_printf("css%ccs%scscscs", 'T', "Test");
-  */
+	_printf("css%ccs%scscscs\n", 'T', "Test");
+  
+  
   
 	putchar('\n');
 	elen =_printf(NULL);
 	_printf("%d\n",elen);
+
+  	putchar('\n');
+	elen =printf(NULL);
+	printf("%d\n",elen);
   
 	elen= _printf("%c", '\0');
 	putchar('\n');
@@ -95,17 +132,59 @@ int main(void)
 	
   _printf("%d\n",elen);
 	_printf("%d\n",pelen);
-	elen = _printf("%");
+
+
+	elen= printf("%c", '\0');
+	putchar('\n');
+	pelen = printf("%c", '\0');
+	putchar('\n');
+	
+  printf("%d\n",elen);
+	printf("%d\n",pelen);
+
+
+
+
+
+	
+  elen = printf("%");
+	putchar('\n');
+	pelen = printf("%");
+	putchar('\n');
+	printf("%d\n",elen);
+	printf("%d\n",pelen);
+
+  elen = _printf("%");
 	putchar('\n');
 	pelen = _printf("%");
 	putchar('\n');
-	_printf("%d\n",elen);
+  _printf("%d\n",elen);
 	_printf("%d\n",pelen);
-	_printf("%!\n");
-	_printf("%!\n");
-	_printf("%K\n");
-	_printf("%K\n");
+
+  
+  
+
+	elen =_printf("%!\n");
+    _printf("%d\n",elen);
+	elen =_printf("%!\n");
+    _printf("%d\n",elen);
+	elen = _printf("%K\n");
+    _printf("%d\n",elen);
+	elen = _printf("%K\n");
+    _printf("%d\n",elen);
 	putchar('\n');
+
+	elen =printf("%!\n");
+    _printf("%d\n",elen);
+	elen =printf("%!\n");
+    _printf("%d\n",elen);
+	elen = printf("%K\n");
+    _printf("%d\n",elen);
+	elen = printf("%K\n");
+    _printf("%d\n",elen);
+	putchar('\n');
+
+
   
 	elen = _printf("Expected: %k\n");
 	_printf("%d\n",elen);
@@ -134,6 +213,11 @@ _printf("Actual: %\n");
 	pelen = _printf("222%55\n");
 	_printf("%d\n",pelen);
 	str = "hello, world";
+
+  	pelen = printf("222%55\n");
+	printf("%d\n",pelen);
+	str = "hello, world";
+  
 	_printf("\n=====================\n");
 	_printf("*****CHAR*****\n");
 	_printf("=====================\n");
@@ -143,7 +227,7 @@ _printf("Actual: %\n");
 	alen = _printf("Actual     : %c\n", c);
 	_printf("Expected   : %i\n", elen);
 	_printf("Actual     : %i\n", alen);
-  /*
+  
 	_printf("Expected   : %cc\n", 'a');
 	_printf("Actual     : %cc\n", 'a');
 	_printf("Expected   : %c\n", 53);
@@ -172,7 +256,13 @@ _printf("Actual: %\n");
 	alen = _printf("%s", "");
 	_printf("Expected   : %i\n", elen);
 	_printf("Actual     : %i\n", alen);
-	*/
+	
+  
+  
+  
+  
+  
+  
   
   _printf("Expected   : %sschool\n", "holberton");
 	_printf("Actual     : %sschool\n", "holberton");
@@ -193,19 +283,33 @@ _printf("Actual: %\n");
 	_printf("%b", 1024);
 	putchar('\n');
 	_printf("%b\n", 1024);
-	_printf("%r\n","hector");
+
+  	_printf("%b", 98);
+	putchar('\n');
+	_printf("%b\n", 98);
+
+  
+elen = _printf("%r\n","hector");
+_printf("%d\n",elen);
 _printf("Complete the sentence: You %r nothing, Jon Snow.\n", "know");
+
+	putchar('\n');
+
+
 	_printf("%r", "\nThis sentence is retrieved from va_args!");
 	putchar('\n');
+printf("R\n");
+  
 	elen = _printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
 	_printf("%d\n",elen);
   
   
   
 	pelen = _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "xabj");
-  //printf("%d\n",pelen);
+  
+  
 	_printf("%d\n",pelen);
-
+/*
 	pelen = _printf("%p", (void *)0x7fff5100b608);
 	putchar('\n');
 	_printf("%d\n",pelen);
@@ -227,7 +331,7 @@ _printf("Complete the sentence: You %r nothing, Jon Snow.\n", "know");
 	putchar('\n');
 	pelen = _printf("%pppp", (void *)0x7fff5100b6f8);
 	_printf("%d\n",pelen);
-/*
+
 
 	_printf("%u\n", 1024);
 	_printf("%u\n", -1024);

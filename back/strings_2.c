@@ -57,20 +57,21 @@ int printing_char_1(char **buffer, char word, int *j, int *l)
 
 	i = 0;
 
-	if (*j < 1000)
+	if (*j < 10)
 	{
 		(*buffer)[*j]  = p;
 		(*l)++;
 	}
 	else
 	{
-		write(1, *buffer, *j);
+		write(1, *buffer, *l);
 		free(*buffer);
-		*buffer = create_buffer(1000);
+		*buffer = create_buffer(10);
 		*j = 0;
 		*l = 0;
 		(*buffer)[*j] = p;
 		(*l)++;
+    
 	}
 
 	return (0);

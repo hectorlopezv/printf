@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	int format_fail = 0;
 
 	va_start(arg, format);
-	buffer = create_buffer(1000);
+	buffer = create_buffer(10);
 	if (format == NULL)
   {
     free(buffer);
