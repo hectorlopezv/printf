@@ -60,6 +60,18 @@ int main(void)
 	if (len != len2)
 	{
 		printf("Lengths differ.\n");
+	}
+	p = (void *)0x7fff5100b6f8;
+
+	len = _printf("Can you print an address?\n%p\nNice!\n", p);
+	len2 = printf("Can you print an address?\n%p\nNice!\n", p);
+	printf("largo de mi printf %d\n",len);
+
+	printf("largo del  original %d\n",len2);
+
+	if (len != len2)
+	{
+		printf("Lengths differ.\n");
 		return (1);
 	}
 

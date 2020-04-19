@@ -49,10 +49,11 @@ int print_pointer_void(char **buffer, int *total_chars,
 	int i, j;
 	char *word, *null_case;
 	char p[3];
+	char *fffff_case = "ffffffffffffffff";
 
 	p[0] = '0', p[1] = 'x', p[2] = '\0';
 
-	word = convert(va_arg(list, unsigned int), 16);
+	word = convert(va_arg(list, long int), 16);
 	null_case = "(nil)";
 
 	if (word[0] == '0')
@@ -64,14 +65,24 @@ int print_pointer_void(char **buffer, int *total_chars,
 		return (i);
 	}
 	for (j = 0; p[j] != '\0'; ++j)
-	{
 		_putchar(buffer, p[j], total_chars);
+	printf("word %s\n",word);
+	if (word[0] == '-' )
+	{
+		for (i = 0; fffff_case[i] != '\0'; ++i)
+		{
+			_putchar(buffer, fffff_case[i], total_chars);
+		}
+	}
+	else
+	{
+
+		for (i = 0; word[i] != '\0'; ++i)
+		{
+			_putchar(buffer, word[i], total_chars);
+		}
 	}
 
-	for (i = 0; word[i] != '\0'; ++i)
-	{
-		_putchar(buffer, word[i], total_chars);
-	}
 	return (i + j);
 }
 

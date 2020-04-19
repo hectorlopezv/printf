@@ -11,12 +11,10 @@ char *convert(long int num, int base)
 {
 	static char *array;
 	static char buffer[50];
-	char sign = 0;
-	char *ptr;
-	unsigned long n;
+	char sign = 0, *ptr;
+	unsigned  long n = num;
 
 	array = "0123456789abcdef";
-	n = num;
 	if (num < 0)
 	{
 		n = -num;
@@ -24,7 +22,8 @@ char *convert(long int num, int base)
 	}
 	ptr = &buffer[49];
 	*ptr = '\0';
-	do      {
+	do {
+
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
