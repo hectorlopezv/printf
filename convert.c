@@ -44,42 +44,24 @@ char * two_complement(long int num)
 	string_complement = malloc(256);
 	complement_flag = 0;
 	i = 0;
-
-	if (num < 0)
-	{
-		num *= -1;
-		complement_flag = 1;
-		test_complement = (~num);
-	}
-
-	temp = num;
-	test_complement = ~num;
-	printf ("numero temp %d\n", temp);
-	printf("numero ~+1 %d\n",test_complement);
-	for (j = 0; num > 1; j++)
-		num /=10;
+	temp = num, test_complement = num;
+	if (temp < 0 )
+		temp *= -1;
 	while (temp >= 1)
 	{
-		string[i] =  (temp & 1) == 0 ? '0':  '1';
-		temp = temp >> 1;
-		printf("modulo test_complement %d\n", test_complement % 2);
+		temp = num /2;
 
 		string_complement[i] =  (test_complement % 2) < 0 ? '1' : '0';
 
 		test_complement = test_complement / 2;
 
-		printf("temp %d\n",temp);
 		printf("test_complement %d\n",test_complement);
 		i++;
 	}
-	string[i] = 0;
 	string_complement[i] = 0;
 	printf("digitos en binario %d\n",i);
-	printf("digitos en el numero %d\n",j);
 	printf("hola\n");
-	printf("este es el numero en binario %s\n", string);
 	printf("este es el numero del complemento %s\n", string_complement);
-
 
 	string_rev = malloc (i+1);
 	for (index = i - 1, j = 0; index >= 0 && j<= i -1; --index, j++)

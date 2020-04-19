@@ -37,8 +37,6 @@ int print_to_binary(char **buffer, int *total_chars,
 {
 	char *p;
 	int i;
-	//p =  two_complement(va_arg(list, unsigned int));
-	//free(p);
 	p = convert(va_arg(list, unsigned int), 2);
 
 	for (i = 0; p[i] != '\0'; ++i)
