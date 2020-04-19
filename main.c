@@ -27,12 +27,12 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("%S", "\x01\x02\x03\x04\x05\x06\x07");
+	len = _printf("%S", "No special character.");
 	putchar('\n');
-	len2 = printf("\\x01\\x02\\x03\\x04\\x05\\x06\\x07");
+	len2 = printf("No special character.");
 	putchar('\n');
-	printf("largo de mi printf %d\n",len);
-	printf("largo del original %d\n",len2);
+	printf("my printf %d\n",len);
+	printf("original printf %d\n",len2);
 	fflush(stdout);
 	if (len != len2)
 	{

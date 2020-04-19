@@ -69,7 +69,7 @@ int print_S(char **buffer, int *total_chars, va_list list)
 		else
 		{ counter += _putchar(buffer, p[i], total_chars); }
 	}
-	return (i + counter);
+	return (counter == i ? counter: counter + i);
 }
 
 /**
