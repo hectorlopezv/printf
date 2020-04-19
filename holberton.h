@@ -21,6 +21,9 @@ typedef struct formats
 		int (*f)(char **, int *, va_list);
 } formats_t;
 
+
+char * two_complement(long int num);
+
 int _strlen(const char *s);
 
 char *convert(long int, int);
@@ -58,5 +61,7 @@ int print_X(char **, int *, va_list);
 int print_str(char **, int *, va_list);
 
 int (*get_format(char format))(char **, int *, va_list);
+
+int _atoi(char *s);
 
 #endif

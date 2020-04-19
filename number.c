@@ -35,10 +35,11 @@ int print_int(char **buffer, int *total_chars, va_list list)
 int print_to_binary(char **buffer, int *total_chars,
 		va_list list)
 {
-	int i;
 	char *p;
-
-	p =  convert(va_arg(list, int), 2);
+	int i;
+	//p =  two_complement(va_arg(list, unsigned int));
+	//free(p);
+	p = convert(va_arg(list, unsigned int), 2);
 
 	for (i = 0; p[i] != '\0'; ++i)
 	{
