@@ -26,14 +26,14 @@
 int main(void)
 {
 	int len, len2;
+	long int l = UINT_MAX;
 
-	len = _printf("%b", -210);
-
-	printf("\n");
-	len2 = printf("11111111111111111111110000000000");
+	l += 1024;
+	len = _printf("%o\n", l);
+	len2 = printf("%o\n", l);
+	printf("largo de mi printf %d\n",len);
+	printf("largo del original %d\n",len2);
 	fflush(stdout);
-
-	printf("\n");
 	if (len != len2)
 	{
 		printf("Lengths differ.\n");
