@@ -31,9 +31,8 @@ int print_char(char **buffer, int *total_chars, va_list list)
 
 int print_S(char **buffer, int *total_chars, va_list list)
 {
-	int i;
+	int i, counter = 0;
 	char *null_case, *p, *hex;
-
 	i = 0, p = va_arg(list, char *), null_case = "(null)";
 	if (p == 0 || p == NULL)
 	{
@@ -46,16 +45,16 @@ int print_S(char **buffer, int *total_chars, va_list list)
 	{
 		if ((p[i] > 0 && p[i] < 32) || p[i] >= 127)
 		{	hex = convert(p[i], 16);
-			_putchar(buffer, '\\', total_chars);
-			_putchar(buffer, 'x', total_chars);
+			counter += _putchar(buffer, '\\', total_chars);
+			counter += _putchar(buffer, 'x', total_chars);
 			if (_strlen(hex) - 1  == 0)
-			{
+			{/*1 digit*/
 				_putchar(buffer, '0', total_chars);
 				if (hex[0] >= 97 && hex[0] <= 102)
 				{	hex[0] = hex[0] - 32; }
-				_putchar(buffer, hex[0], total_chars); }
+				counter += _putchar(buffer, hex[0], total_chars); }
 			else if (_strlen(hex) - 1 == 1)
-			{
+			{/*2 digit*/
 
 				if (hex[0] >= 97 && hex[0] <= 102)
 				{
@@ -63,14 +62,14 @@ int print_S(char **buffer, int *total_chars, va_list list)
 				if (hex[1] >= 97 && hex[1] <= 102)
 				{
 					hex[1] = hex[1] - 32; }
-				_putchar(buffer, hex[0], total_chars);
-				_putchar(buffer, hex[1], total_chars);
+				counter += _putchar(buffer, hex[0], total_chars);
+				counter += _putchar(buffer, hex[1], total_chars);
 			}
 		}
 		else
-		{ _putchar(buffer, p[i], total_chars); }
+		{ counter += _putchar(buffer, p[i], total_chars); }
 	}
-	return (i);
+	return (i + counter);
 }
 
 /**

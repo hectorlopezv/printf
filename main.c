@@ -26,11 +26,11 @@
 int main(void)
 {
 	int len, len2;
-	long int l = UINT_MAX;
 
-	l += 1024;
-	len = _printf("%x\n", l);
-	len2 = printf("%x\n", l);
+	len = _printf("%S", "\x01\x02\x03\x04\x05\x06\x07");
+	putchar('\n');
+	len2 = printf("\\x01\\x02\\x03\\x04\\x05\\x06\\x07");
+	putchar('\n');
 	printf("largo de mi printf %d\n",len);
 	printf("largo del original %d\n",len2);
 	fflush(stdout);
