@@ -52,7 +52,7 @@ int print_pointer_void(char **buffer, int *total_chars,
 
 	p[0] = '0', p[1] = 'x', p[2] = '\0';
 
-	word = convert(va_arg(list, long int), 16);
+	word = convert(va_arg(list, unsigned int), 16);
 	null_case = "(nil)";
 
 	if (word[0] == '0')

@@ -26,6 +26,7 @@
 int main(void)
 {
 	int len, len2;
+	void *p = (void *)-1;
 
 	len = _printf("Could you print some non-prntable characters?\n%S\nThanks!\n", "Sure:\x1F\x7F\n");
 	len2 = printf("Could you print some non-prntable characters?\nSure:\\x1F\\x7F\\x0A\nThanks!\n");
@@ -47,5 +48,20 @@ int main(void)
 		printf("Lengths differ.\n");
 		return (1);
 	}
+
+
+	len = _printf("Can you print an address?\n%p\nNice!\n", p);
+
+	len2 = printf("Can you print an address?\n%p\nNice!\n", p);
+	printf("largo de mi printf %d\n",len);
+
+	printf("largo del  original %d\n",len2);
+
+	if (len != len2)
+	{
+		printf("Lengths differ.\n");
+		return (1);
+	}
+
 	return (0);
 }
