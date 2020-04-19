@@ -15,7 +15,6 @@ int print_char(char **buffer, int *total_chars, va_list list)
 	p = (char) va_arg(list, int);
 
 	_putchar(buffer, p, total_chars);
-
 	return (1);
 
 }
