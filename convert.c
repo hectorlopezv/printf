@@ -36,13 +36,11 @@ char *convert(long int num, int base)
 
 char * two_complement(long int num)
 {
-	int temp, i, j, index, complement_flag;
-	char *string, *string_rev, *string_complement;
+	int temp, i, j, index;
+	char *string_rev, *string_complement;
 	int test_complement;
 
-	string = malloc (256);
 	string_complement = malloc(256);
-	complement_flag = 0;
 	i = 0;
 	temp = num, test_complement = num;
 	if (temp < 0 )
@@ -55,20 +53,15 @@ char * two_complement(long int num)
 
 		test_complement = test_complement / 2;
 
-		printf("test_complement %d\n",test_complement);
 		i++;
 	}
 	string_complement[i] = 0;
-	printf("digitos en binario %d\n",i);
-	printf("hola\n");
-	printf("este es el numero del complemento %s\n", string_complement);
 
 	string_rev = malloc (i+1);
 	for (index = i - 1, j = 0; index >= 0 && j<= i -1; --index, j++)
-		string_rev[j] = string[index];
+		string_rev[j] = string_complement[index];
 	string_rev[j] = 0;
-	printf("reversed string %s\n", string_rev);
-	free(string);
+	free(string_complement);
 	return (string_rev);
 }
 
