@@ -66,7 +66,6 @@ int print_pointer_void(char **buffer, int *total_chars,
 	}
 	for (j = 0; p[j] != '\0'; ++j)
 		_putchar(buffer, p[j], total_chars);
-	printf("word %s\n",word);
 	if (word[0] == '-' )
 	{
 		for (i = 0; fffff_case[i] != '\0'; ++i)
