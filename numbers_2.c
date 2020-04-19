@@ -14,7 +14,7 @@ int print_x(char **buffer, int *total_chars, va_list list)
 	int i;
 	char *word;
 
-	word = convert(va_arg(list, long int), 16);
+	word = convert(va_arg(list, unsigned int), 16);
 
 	for (i = 0; word[i] != '\0'; ++i)
 	{

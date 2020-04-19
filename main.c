@@ -29,8 +29,8 @@ int main(void)
 	long int l = UINT_MAX;
 
 	l += 1024;
-	len = _printf("%o\n", l);
-	len2 = printf("%o\n", l);
+	len = _printf("%x\n", l);
+	len2 = printf("%x\n", l);
 	printf("largo de mi printf %d\n",len);
 	printf("largo del original %d\n",len2);
 	fflush(stdout);
