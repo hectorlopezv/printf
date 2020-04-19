@@ -69,9 +69,7 @@ int print_S(char **buffer, int *total_chars, va_list list)
 		else
 		{ counter += _putchar(buffer, p[i], total_chars); }
 	}
-	printf("counter %d\n",counter);
-	printf("i %d\n",i);
-	return (counter == i ? counter: counter + i);
+	return (counter);
 }
 
 /**
