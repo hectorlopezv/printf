@@ -27,12 +27,10 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("%S", "No special character.");
-	putchar('\n');
-	len2 = printf("No special character.");
-	putchar('\n');
-	printf("my printf %d\n",len);
-	printf("original printf %d\n",len2);
+	len = _printf("Could you print some non-prntable characters?\n%S\nThanks!\n", "Sure:\x1F\x7F\n");
+	len2 = printf("Could you print some non-prntable characters?\nSure:\\x1F\\x7F\\x0A\nThanks!\n");
+	printf("largo de mi printf %d\n",len);
+	printf("largo del  original %d\n",len2);
 	fflush(stdout);
 	if (len != len2)
 	{

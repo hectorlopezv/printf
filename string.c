@@ -49,7 +49,7 @@ int print_S(char **buffer, int *total_chars, va_list list)
 			counter += _putchar(buffer, 'x', total_chars);
 			if (_strlen(hex) - 1  == 0)
 			{/*1 digit*/
-				_putchar(buffer, '0', total_chars);
+				counter += _putchar(buffer, '0', total_chars);
 				if (hex[0] >= 97 && hex[0] <= 102)
 				{	hex[0] = hex[0] - 32; }
 				counter += _putchar(buffer, hex[0], total_chars); }
@@ -69,6 +69,8 @@ int print_S(char **buffer, int *total_chars, va_list list)
 		else
 		{ counter += _putchar(buffer, p[i], total_chars); }
 	}
+	printf("counter %d\n",counter);
+	printf("i %d\n",i);
 	return (counter == i ? counter: counter + i);
 }
 

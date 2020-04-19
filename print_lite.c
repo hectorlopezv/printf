@@ -42,9 +42,11 @@ int _printf(char *format, ...)
 					break; }
 			}
 			else
-			{	p2 += temp; }
+			{	p2 += temp, temp = 0; }
 		} i++; }
 	write(STDOUT_FILENO, buffer, total_chars + 1);
 	free(buffer), va_end(arg);
+	printf("p %d \n",p);
+	printf("p2 %d \n",p2);
 	return (p + p2);
 }
