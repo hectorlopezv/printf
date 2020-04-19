@@ -12,12 +12,12 @@ int _printf(char *format, ...)
 	char *buffer;
 	va_list arg;
 
-	buffer = (char *) malloc(1024 * sizeof(char ));
-	if (buffer == NULL)
-		return (-1);
-
 	va_start(arg, format);
 	i = 0, total_chars = -1, p = 0, p2 = 0, temp = 0;
+
+	buffer = malloc(1024);
+	if (buffer == NULL)
+		return (-1);
 	if (format == NULL)
 		return (-1);
 	while (format[i] != '\0')

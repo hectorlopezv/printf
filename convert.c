@@ -52,7 +52,7 @@ int _putchar(char **buffer, char formato, int *total_chars)
 	else
 	{
 		write(1, *buffer, *total_chars);
-		free(*buffer), buffer = NULL;
+		free(*buffer), *buffer = NULL;
 		*buffer = malloc(1024);
 		*total_chars = 0;
 		(*buffer)[*total_chars] = formato;
